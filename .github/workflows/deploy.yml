@@ -1,0 +1,56 @@
+name: Deploy to WordPress.org
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  tag:
+    name: New tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install SVN (Subversion)
+        run: |
+          sudo apt-get update
+          sudo apt-get install subversion
+
+      - name: WordPress Plugin Deploy
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        with:
+          generate-zip: true
+
+      - name: Find Readme File
+        id: find_readme
+        run: |
+          for file in README.txt README.md Readme.txt Readme.md readme.txt readme.md; do
+            if [ -f "$file" ]; then
+              echo "::set-output name=readme_file::$file"
+              break
+            fi
+          done
+
+      - name: Extract Release Notes
+        id: release_notes
+        run: |
+          if [[ -z "${{ steps.find_readme.outputs.readme_file }}" ]]; then
+            echo "::error::Readme file not found."
+            exit 1
+          fi
+
+          release_notes=$(grep '== Changelog ===' "${{ steps.find_readme.outputs.readme_file }}" | head -n -1 | tail -n +2)
+          echo "::set-output name=notes::$release_notes"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          body: ${{ steps.release_notes.outputs.notes }}
+          files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
+
+env:
+  SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+  SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
