@@ -1,0 +1,1197 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Language: \n"
+"POT-Creation-Date: 2025-01-17 19:09+0000\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: templates/admin/tours_add.php:305
+msgid "#HTML element id with(with hash at start) "
+msgstr ""
+
+#: templates/admin/tours_add.php:228
+msgid "#html_element_id"
+msgstr ""
+
+#. %s template
+#: includes/cbxtakeatour-tpl-loader.php:95
+#, php-format
+msgid "%s does not exist."
+msgstr ""
+
+#. 1. Total number of items 2. Total number of items
+#: includes/CBXTakeaTourListing.php:581
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#. %s: plugin setting url for licence
+#: includes/CBXTakeaTourAdmin.php:705
+#, php-format
+msgid ""
+"<strong>Note:</strong> CBX Changelog Pro Addon is custom plugin. This plugin "
+"can not be auto update from dashboard/plugin manager. For manual update "
+"please check <a target=\"_blank\" href=\"%1$s\">documentation</a>. <strong "
+"style=\"color: red;\">It seems this plugin's current version is older than "
+"%2$s . To get the latest pro addon features, this plugin needs to upgrade to "
+"%2$s or later.</strong>"
+msgstr ""
+
+#: templates/admin/tours_add.php:626
+msgid "Actions"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:534
+#: includes/class-cbxtakeatour-settings.php:871
+#: templates/admin/tours_list.php:38
+msgid "Add New"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:533
+msgid "Add New Tour"
+msgstr ""
+
+#: templates/admin/tours_add.php:287
+msgid "Add Step"
+msgstr ""
+
+#: templates/admin/tours_add.php:527
+msgid "Add tittle, add content and check settings"
+msgstr ""
+
+#: templates/admin/tours_list.php:95
+msgid "All"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1258
+msgid "All Tour auto drafts deleted"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:531
+msgid "All Tours"
+msgstr ""
+
+#: templates/admin/tours_add.php:117
+msgid "Animate Backdrop"
+msgstr ""
+
+#: templates/admin/tours_add.php:105
+msgid "Animate Dialog"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:388
+msgid "Are you sure to remove all steps?"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:387
+msgid "Are you sure to remove this step?"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:391
+msgid "Are you sure?"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:416
+msgid "Attention"
+msgstr ""
+
+#: templates/admin/tours_add.php:369
+msgid "Auto-start"
+msgstr ""
+
+#: templates/admin/tours_add.php:47
+msgid "Back"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:906
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:166
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:99
+#: widgets/classic-widgets/views/admin.php:116
+msgid "Block Button (Full Width)"
+msgstr ""
+
+#: templates/admin/tours_add.php:383
+msgid "Block Button(Full Width)"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:175
+msgid "Blue"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:131
+msgid "Bottom"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:907 templates/admin/tours_add.php:396
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:180
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:111
+msgid "Button Align"
+msgstr ""
+
+#: widgets/classic-widgets/views/admin.php:136
+msgid "Button Alignment"
+msgstr ""
+
+#: widgets/classic-widgets/views/admin.php:68
+msgid "Button Text (Leave empty to use tour post meta setting)"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:903
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:129
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:68
+msgid "Button Text (Leave empty to use tour post meta)"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:400 includes/CBXTakeaTourAdmin.php:421
+msgid "Cancel"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:405
+msgid "cancel and close"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1023
+msgid "CBX Blocks"
+msgstr ""
+
+#: templates/admin/support.php:200
+msgid "CBX Take a Tour Plugin Details"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:529
+msgid "CBX Tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:896
+#: widgets/classic-widgets/class-cbxtakeatour-widget.php:33
+#: widgets/classic-widgets/class-cbxtakeatour-widget.php:64
+#: widgets/classic-widgets/class-cbxtakeatour-widget.php:143
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:36
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:50
+msgid "CBX Tour - User Walkthroughs"
+msgstr ""
+
+#. Name of the plugin
+msgid "CBX Tour - User Walkthroughs & Guided Tours"
+msgstr ""
+
+#. 1. Product external url
+#: includes/CBXTakeaTourAdmin.php:792
+#, php-format
+msgid ""
+"CBX Tour - User Walkthroughs & Guided Tours Pro has extended features and "
+"more controls, <a style=\"color:#6648fe !important; font-weight: bold;\" "
+"target=\"_blank\" href=\"%s\">try it</a>  - Codeboxr Team"
+msgstr ""
+
+#: widgets/classic-widgets/class-cbxtakeatour-widget.php:36
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:51
+msgid "CBX Tour - User Walkthroughs & Guided Tours Widget"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:900
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:77
+msgid "CBX Tour - User Walkthroughs Settings"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:109
+msgid "CBX Tours"
+msgstr ""
+
+#: templates/admin/support.php:31
+msgid "CBX Tours: Support & Docs"
+msgstr ""
+
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:54
+msgid "CBX Widgets"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:542
+msgid "cbxtour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:852 templates/admin/tours_add.php:403
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:184
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:115
+#: widgets/classic-widgets/views/admin.php:142
+msgid "Center"
+msgstr ""
+
+#. 1. Label
+#: includes/CBXTakeaTourListing.php:262
+#, php-format
+msgid "Change to %s"
+msgstr ""
+
+#: templates/admin/tours_add.php:551
+msgid "Change tour settings as your need"
+msgstr ""
+
+#: templates/admin/support.php:82
+msgid "Changelog Core Plugin"
+msgstr ""
+
+#: templates/admin/support.php:138
+msgid "Changelog Pro Addon"
+msgstr ""
+
+#. 1. Plugin setting url, 2. Product external url, 3. Log listing url
+#: includes/CBXTakeaTourAdmin.php:758
+#, php-format
+msgid ""
+"Check <a style=\"color:#6648fe !important; font-weight: bold;\" "
+"href=\"%1$s\">Settings</a> | <a style=\"color:#6648fe !important; font-"
+"weight: bold;\" href=\"%2$s\" target=\"_blank\">Documentation</a> | Create "
+"<a style=\"color:#6648fe !important; font-weight: bold;\" href=\"%3$s\" >"
+"Tour</a>"
+msgstr ""
+
+#. 1. Plugin setting url, 2. Product external url, 3. Log listing url
+#: includes/CBXTakeaTourAdmin.php:739
+#, php-format
+msgid ""
+"Check <a style=\"color:#6648fe !important; font-weight: bold;\" "
+"href=\"%1$s\">Settings</a> | <a style=\"color:#6648fe !important; font-"
+"weight: bold;\" href=\"%2$s\" target=\"_blank\">Documentation</a> | Create "
+"<a style=\"color:#6648fe !important; font-weight: bold;\" href=\"%3$s\">"
+"Tour</a>"
+msgstr ""
+
+#: includes/class-cbxtakeatour-settings.php:415
+msgid "Check All"
+msgstr ""
+
+#. 1. External Help page 2. External Product page
+#: includes/CBXTakeaTourAdmin.php:1206
+#, php-format
+msgid ""
+"Check how to <a style=\"color:#9c27b0 !important; font-weight: bold;\" "
+"href=\"%1$s\"><strong>Update manually</strong></a> , download latest version "
+"from <a style=\"color:#9c27b0 !important; font-weight: bold;\" href=\"%2$s\">"
+"<strong>My Account</strong></a> section of Codeboxr.com"
+msgstr ""
+
+#: includes/class-cbxtakeatour-settings.php:738
+msgid "Choose Color"
+msgstr ""
+
+#: includes/class-cbxtakeatour-settings.php:707
+msgid "Choose File"
+msgstr ""
+
+#: templates/admin/tours_list.php:48
+msgid "Clean Auto-Draft"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:401
+msgid "Clear"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:406
+msgid "clear and close"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:571 includes/CBXTakeaTourListing.php:154
+#: templates/admin/tours_add.php:665
+msgid "Click to clipboard"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:384 includes/CBXTakeaTourListing.php:154
+#: templates/admin/tours_add.php:667
+msgid "Click to copy"
+msgstr ""
+
+#: includes/class-cbxtakeatour-settings.php:239
+msgid "Click to show hide"
+msgstr ""
+
+#: templates/admin/support.php:282
+msgid "Codeboxr News Updates"
+msgstr ""
+
+#. Author of the plugin
+msgid "Codeboxr Team"
+msgstr ""
+
+#: includes/CBXTakeaTourPublic.php:263
+msgid "Codeboxr Widgets"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:407
+msgid "color input field"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:395
+msgid "color picker dialog"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:408
+msgid "color selection area"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:397
+msgid "color swatch"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:419
+msgid "Confirmation"
+msgstr ""
+
+#: templates/admin/tours_add.php:248 templates/admin/tours_add.php:317
+#: templates/admin/tours_add.php:319
+msgid "Content"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:383
+msgid "Copied"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:385
+msgid "Copied to clipboard"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:382
+msgid "Copy"
+msgstr ""
+
+#: templates/admin/support.php:228
+msgid "Core Plugin Support"
+msgstr ""
+
+#: templates/admin/tours_add.php:528
+msgid "Create Tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:182 includes/CBXTakeaTourListing.php:195
+msgid "Created"
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:652 includes/CBXTakeaTourListing.php:655
+msgid "Current Page"
+msgstr ""
+
+#: templates/admin/tours_add.php:564
+msgid "Custom Style"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:173
+msgid "Default"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:968
+msgid ""
+"Delete Global Config data and custom table created by this plugin on "
+"uninstall."
+msgstr ""
+
+#: templates/admin/tours_add.php:212 templates/admin/tours_add.php:296
+msgid "Delete Step"
+msgstr ""
+
+#: widgets/classic-widgets/views/admin.php:76
+msgid "Display Button"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:904
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:138
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:75
+msgid "Display Tour Button"
+msgstr ""
+
+#: templates/admin/tours_add.php:357
+msgid "Display tour button"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1089
+msgid "Documentation"
+msgstr ""
+
+#: templates/admin/support.php:210
+msgid "Documentation & User Guide"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:784 templates/admin/tours_list.php:106
+msgid "Draft"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:535
+msgid "Edit Tour"
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:103
+msgid "Edit User"
+msgstr ""
+
+#: templates/admin/tours_add.php:221 templates/admin/tours_add.php:302
+msgid "Element"
+msgstr ""
+
+#: templates/admin/tours_add.php:129
+msgid "Enable Keyboard Shortcuts"
+msgstr ""
+
+#: templates/admin/tours_add.php:145
+msgid "Enable Tour JS Debug"
+msgstr ""
+
+#: templates/admin/tours_add.php:269 templates/admin/tours_add.php:324
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:831 includes/CBXTakeaTourPublic.php:114
+msgid "End tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:417
+msgid "Error"
+msgstr ""
+
+#: templates/admin/tours_add.php:137
+msgid "Exit on Click Outside"
+msgstr ""
+
+#: templates/admin/tours_add.php:133
+msgid "Exit on ESC"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1062
+msgid "Explore Tours"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1320
+msgid "Failed to trash"
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:633
+msgid "First page"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:909
+msgid "Following database tables will be reset/deleted and then re-created."
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:875
+msgid ""
+"Following option values created by this plugin(including addon) from "
+"WordPress core option table"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1087
+msgid "Free Support"
+msgstr ""
+
+#: templates/admin/support.php:50
+msgid "Get Free & Pro Addons"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:117 includes/CBXTakeaTourAdmin.php:118
+msgid "Global Setting"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:441 templates/admin/support.php:38
+#: templates/admin/tours_add.php:49 templates/admin/tours_error.php:37
+#: templates/admin/tours_list.php:51
+msgid "Global Settings"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:176
+msgid "Green"
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:108
+msgid "Guest User"
+msgstr ""
+
+#: templates/admin/support.php:189
+msgid "Help & Supports"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:124 includes/CBXTakeaTourAdmin.php:125
+msgid "Helps & Updates"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:160
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:80
+#: widgets/classic-widgets/views/admin.php:83
+msgid "Hide"
+msgstr ""
+
+#: templates/admin/tours_add.php:113
+msgid "Hide Next Button"
+msgstr ""
+
+#: templates/admin/tours_add.php:109
+msgid "Hide Prev Button"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://codeboxr.com"
+msgstr ""
+
+#. URI of the plugin
+msgid ""
+"https://codeboxr.com/product/cbx-tour-user-walkthroughs-guided-tours-for-"
+"wordpress//"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:409
+msgid "hue selection slider"
+msgstr ""
+
+#: templates/admin/tours_add.php:563
+msgid ""
+"If you choose custom layout from setting then adjust custom styles as need "
+"from this tab."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:414
+msgid "Info"
+msgstr ""
+
+#. Description of the plugin
+msgid "Interactive tour creator for product/service feature for wordpress"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:235
+msgid "Invalid tour or you don't have permission to edit this tour."
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:683
+msgid "Last page"
+msgstr ""
+
+#: templates/admin/tours_add.php:450
+msgid "Layout"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:853 includes/CBXTakeaTourHelper.php:132
+#: templates/admin/tours_add.php:405
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:185
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:116
+#: widgets/classic-widgets/views/admin.php:143
+msgid "Left"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:418
+msgid "Loading"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:955
+msgid "Loading ..."
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:252 templates/admin/tours_add.php:646
+msgid "Move to Trash"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:829 includes/CBXTakeaTourPublic.php:112
+msgid "Next"
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:671
+msgid "Next page"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:390 includes/CBXTakeaTourAdmin.php:869
+#: includes/CBXTakeaTourHelper.php:148 includes/CBXTakeaTourHelper.php:972
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:143
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:157
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:171
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:92
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:104
+#: widgets/classic-widgets/views/admin.php:103
+#: widgets/classic-widgets/views/admin.php:123
+msgid "No"
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:556
+msgid "No logs found. Please change your search criteria for better result."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:538
+msgid "No tours available, please create one."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:855 templates/admin/tours_add.php:409
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:187
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:118
+#: widgets/classic-widgets/views/admin.php:145
+msgid "None"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:539
+msgid "Not found in Trash"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:146
+msgid "Number of items per page"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:420
+msgid "OK"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:967
+msgid "On Uninstall delete plugin data"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:392
+msgid "Once you delete, it's gone forever. You can not revert it back."
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:881 includes/CBXTakeaTourHelper.php:902
+msgid "Option ID"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:880 includes/CBXTakeaTourHelper.php:901
+msgid "Option Name"
+msgstr ""
+
+#: templates/admin/support.php:245
+msgid "Other WordPress Plugins"
+msgstr ""
+
+#. 1. Html current page 2. Html total pages
+#: includes/CBXTakeaTourListing.php:662
+#, php-format
+msgctxt "paging"
+msgid "%1$s of %2$s"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:530
+msgid "Parent Tour:"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:827 includes/CBXTakeaTourPublic.php:110
+msgid "Pause"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:787 templates/admin/tours_list.php:110
+msgid "Pending"
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:256
+msgid "Permanent Delete"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:439
+msgid "Please check the captcha."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:429
+msgid "Please enter a valid date ( ISO )."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:428
+msgid "Please enter a valid date."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:426
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:430
+msgid "Please enter a valid number."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:427
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:435
+msgid "Please enter a value between {0} and {1} characters long."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:436
+msgid "Please enter a value between {0} and {1}."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:438
+msgid "Please enter a value greater than or equal to {0}."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:437
+msgid "Please enter a value less than or equal to {0}."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:434
+msgid "Please enter at least {0} characters."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:433
+msgid "Please enter no more than {0} characters."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:431
+msgid "Please enter only digits."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:432
+msgid "Please enter the same value again."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:425
+msgid "Please fix this field."
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:968
+msgid ""
+"Please note that this process can not be undone, and it is recommended to "
+"keep full database backup before doing this."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:370
+#: includes/class-cbxtakeatour-settings.php:525
+#: includes/class-cbxtakeatour-settings.php:610
+msgid "Please Select"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:964
+msgid "Please select  a tour"
+msgstr ""
+
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:231
+msgid "Please select a tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:527
+msgctxt "Post Type General Name"
+msgid "CBX Tours"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:528
+msgctxt "Post Type Singular Name"
+msgid "CBX Tour"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:830 includes/CBXTakeaTourPublic.php:113
+msgid "Prev"
+msgstr ""
+
+#: includes/CBXTakeaTourListing.php:645
+msgid "Previous page"
+msgstr ""
+
+#: templates/admin/tours_list.php:102
+msgid "Private"
+msgstr ""
+
+#: templates/admin/support.php:238
+msgid "Pro Addon Support"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1093
+msgid "Pro Support"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:785 templates/admin/tours_list.php:98
+msgid "Publish"
+msgstr ""
+
+#: templates/admin/tours_add.php:543
+msgid "Put steps - #html id, step title, step information"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:174
+msgid "Red"
+msgstr ""
+
+#: templates/admin/tours_add.php:341
+msgid "Redirect Url : "
+msgstr ""
+
+#: templates/admin/tours_add.php:288
+msgid "Remove All"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:366
+msgid "Request failed, please reload the page."
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:978
+msgid "Reset all data"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:979
+msgid "Reset Data"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:979
+msgid "Reset option values and all tables created by this plugin"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:828 includes/CBXTakeaTourPublic.php:111
+msgid "Resume"
+msgstr ""
+
+#: templates/admin/support.php:218
+msgid "Review & Rate CBX Tour Plugin"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1088
+msgid "Reviews"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:854 includes/CBXTakeaTourHelper.php:133
+#: templates/admin/tours_add.php:407
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:186
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:117
+#: widgets/classic-widgets/views/admin.php:144
+msgid "Right"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:399
+msgid "Save"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:404
+msgid "save and close"
+msgstr ""
+
+#: templates/admin/tours_add.php:649
+msgid "Save Changes"
+msgstr ""
+
+#: includes/class-cbxtakeatour-settings.php:1113
+#: templates/admin/settings.php:40
+msgid "Save Settings"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:443 templates/admin/tours_list.php:122
+msgid "Search"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:372
+msgid "Search here"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:537
+msgid "Search Tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:824 includes/CBXTakeaTourAdmin.php:901
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:97
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:116
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:118
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:58
+#: widgets/classic-widgets/views/admin.php:35
+#: widgets/classic-widgets/views/admin.php:53
+msgid "Select Tour"
+msgstr ""
+
+#: templates/admin/tours_add.php:445
+msgid "Select Tour layout (Need to save the post)"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:410
+msgid "selection slider"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1061
+msgid "Settings"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:184 includes/CBXTakeaTourListing.php:197
+#: templates/admin/tours_add.php:661
+msgid "Shortcode"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:159
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:79
+#: widgets/classic-widgets/views/admin.php:82
+msgid "Show"
+msgstr ""
+
+#: templates/admin/tours_add.php:141
+msgid "Show Close Button"
+msgstr ""
+
+#: templates/admin/tours_add.php:121
+msgid "Show Step Dots"
+msgstr ""
+
+#: templates/admin/tours_add.php:125
+msgid "Show Step Progress"
+msgstr ""
+
+#: templates/admin/tours_error.php:17
+msgid "Something went wrong"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1365
+msgid "Sorry tour title can not be empty"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1368
+msgid "Sorry tour title length is too short"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1117 includes/CBXTakeaTourAdmin.php:1142
+#: includes/CBXTakeaTourAdmin.php:1263 includes/CBXTakeaTourAdmin.php:1303
+msgid "Sorry, you don't have enough permission"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1351
+msgid "Sorry, you don't have permission to edit this post."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:181 includes/CBXTakeaTourListing.php:194
+#: templates/admin/tours_add.php:629
+msgid "Status"
+msgstr ""
+
+#: templates/admin/tours_add.php:208 templates/admin/tours_add.php:294
+msgid "Step"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:415
+msgid "Success"
+msgstr ""
+
+#: templates/admin/settings.php:39
+msgid "Support & Docs"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:914 includes/CBXTakeaTourHelper.php:936
+msgid "Table Name"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:915 includes/CBXTakeaTourHelper.php:937
+msgid "Table Name in DB"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1420 includes/CBXTakeaTourHelper.php:80
+msgid "Take a Tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:586 templates/admin/tours_add.php:84
+#: templates/admin/tours_add.php:572
+msgid "Take a tour"
+msgstr ""
+
+#. 1. Plugin version
+#: includes/CBXTakeaTourAdmin.php:735
+#, php-format
+msgid ""
+"Thanks for installing/deactivating <strong>CBX Tour - User Walkthroughs & "
+"Guided Tours</strong> V%s - Codeboxr Team"
+msgstr ""
+
+#. 1. Plugin version
+#: includes/CBXTakeaTourAdmin.php:754
+#, php-format
+msgid ""
+"Thanks for upgrading <strong>CBX Tour - User Walkthroughs & Guided "
+"Tours</strong> V%s , enjoy the new features and bug fixes - Codeboxr Team"
+msgstr ""
+
+#: templates/admin/tours_add.php:343
+msgid "The URL link will redirect to the end of the tour."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:424
+msgid "This field is required."
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:413
+msgid "Tip"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:179 includes/CBXTakeaTourListing.php:192
+#: templates/admin/tours_add.php:235 templates/admin/tours_add.php:242
+#: templates/admin/tours_add.php:310 templates/admin/tours_add.php:312
+#: widgets/classic-widgets/views/admin.php:23
+msgid "Title"
+msgstr ""
+
+#: templates/admin/tours_add.php:535
+msgid "Title is like a post title"
+msgstr ""
+
+#: includes/class-cbxtakeatour-settings.php:1088
+msgid "Toggle All Sections"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:396
+msgid "toggle color picker dialog"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:855
+msgid "Tools"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:961
+msgid "Tools Settings"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:130
+msgid "Top"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:905
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:152
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:87
+#: widgets/classic-widgets/views/admin.php:96
+msgid "Tour Auto-start"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:619
+msgid "Tour Box Preview"
+msgstr ""
+
+#: templates/admin/tours_add.php:415
+msgid "Tour Button text"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:612 templates/admin/tours_add.php:616
+msgid "Tour Button/Link Preview"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1219
+msgid "Tour created successfully"
+msgstr ""
+
+#: templates/admin/tours_add.php:492
+msgid "Tour Preview"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1113
+msgid "Tour reset setting html loaded successfully"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1449
+msgid "Tour save/update failed"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1337
+msgid "Tour saved/updated successfully"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1137
+msgid "Tour setting reset scheduled successfully"
+msgstr ""
+
+#: templates/admin/tours_add.php:154 templates/admin/tours_add.php:552
+msgid "Tour Settings"
+msgstr ""
+
+#: templates/admin/tours_add.php:153
+msgid "Tour Steps"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:543
+msgid "Tour steps"
+msgstr ""
+
+#: templates/admin/tours_add.php:67
+msgid "Tour Title"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1297
+msgid "Tour trashed successfully"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:110 templates/admin/tours_add.php:37
+#: templates/admin/tours_list.php:35
+msgid "Tours"
+msgstr ""
+
+#: templates/admin/tours_error.php:31
+msgid "Tours: Error"
+msgstr ""
+
+#: templates/admin/settings.php:33
+msgid "Tours: Global Settings"
+msgstr ""
+
+#: templates/admin/tours_list.php:114
+msgid "Trash"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1095
+msgid "Try Pro Addon"
+msgstr ""
+
+#: includes/class-cbxtakeatour-settings.php:415
+msgid "Uncheck All"
+msgstr ""
+
+#: includes/CBXTakeaTourHelper.php:434 includes/CBXTakeaTourHelper.php:458
+msgid "Unnamed"
+msgstr ""
+
+#: templates/admin/tours_add.php:295
+msgid "Untitled"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1224 includes/CBXTakeaTourAdmin.php:1347
+msgid "Untitled tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:536
+msgid "Update Tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:183 includes/CBXTakeaTourListing.php:196
+msgid "Updated"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:851 includes/CBXTakeaTourAdmin.php:867
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:141
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:155
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:169
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:183
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:78
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:90
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:102
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:114
+#: widgets/classic-widgets/views/admin.php:79
+#: widgets/classic-widgets/views/admin.php:99
+#: widgets/classic-widgets/views/admin.php:119
+#: widgets/classic-widgets/views/admin.php:139
+msgid "Use meta setting"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:398
+msgid "use previous color"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:180 includes/CBXTakeaTourListing.php:193
+msgid "User"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:1373
+msgid "Validation failed, pls check error notes"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:532
+msgid "View Tour"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:371
+msgid "Window Title"
+msgstr ""
+
+#: templates/admin/tours_add.php:544
+msgid "Write Steps"
+msgstr ""
+
+#: templates/admin/tours_add.php:536
+msgid "Write Tour Title"
+msgstr ""
+
+#: includes/CBXTakeaTourAdmin.php:389 includes/CBXTakeaTourAdmin.php:868
+#: includes/CBXTakeaTourHelper.php:147 includes/CBXTakeaTourHelper.php:971
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:142
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:156
+#: widgets/elementor-widgets/class-cbxtakeatour-elemwidget.php:170
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:91
+#: widgets/vc-element/class-cbxtakeatour-wpbwidget.php:103
+#: widgets/classic-widgets/views/admin.php:102
+#: widgets/classic-widgets/views/admin.php:122
+msgid "Yes"
+msgstr ""
