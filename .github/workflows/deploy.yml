@@ -40,7 +40,7 @@ jobs:
             exit 1
           fi
 
-          release_notes=$(grep '== Changelog ===' "${{ steps.find_readme.outputs.readme_file }}" | head -n -1 | tail -n +2)
+          release_notes=$(grep '== Changelog ==' "${{ steps.find_readme.outputs.readme_file }}" | head -n -1 | tail -n +2)
           echo "::set-output name=notes::$release_notes"
 
       - name: Create GitHub Release
