@@ -132,32 +132,13 @@
             tourguide_instance.onBeforeStepChange(async ()=>{
                 //console.log('event fired: onBeforeStepChange');
 
-                //console.log(tourguide_instance.backdrop);
-                //console.log(tourguide_instance.isVisible);
-                //console.log(tourguide_instance.activeStep);
-                //console.log(tourguide_instance.dialog);
-
-                //$(tourguide_instance.dialog).addClass('cbxtakeatour_dialog_step_'+tourguide_instance.activeStep);
-
-
-
                 CBXTakeatourEvents_do_action('cbxtakeatour_tour_onBeforeStepChange', $, $element, $tour_id, tourguide_instance);
             });
 
             tourguide_instance.onAfterStepChange(async ()=>{
                 //console.log('event fired: onAfterStepChange');
 
-                //console.log(tourguide_instance.backdrop);
-                //console.log(tourguide_instance.isVisible);
-                //console.log(tourguide_instance.activeStep);
-                //console.log(tourguide_instance.dialog);
-
                 $tour_active_step = tourguide_instance.activeStep;
-
-                //$(tourguide_instance.dialog).addClass('cbxtakeatour_dialog_step_'+$tour_active_step);
-                /*if($tour_active_step  !== 0){
-                    $(tourguide_instance.dialog).find('#tg-dialog-prev-btn').show();
-                }*/
 
                 CBXTakeatourEvents_do_action('cbxtakeatour_tour_onAfterStepChange', $, $element, $tour_id, tourguide_instance);
             });
@@ -165,81 +146,16 @@
             tourguide_instance.onBeforeExit(async ()=>{
                 //console.log('event fired: onBeforeExit');
 
-                //console.log(tourguide_instance.backdrop);
-                //console.log(tourguide_instance.isVisible);
-                //console.log(tourguide_instance.activeStep);
-                //console.log(tourguide_instance.dialog);
-
-
-
                 CBXTakeatourEvents_do_action('cbxtakeatour_tour_onBeforeExit', $, $element, $tour_id, tourguide_instance);
             });
 
             tourguide_instance.onAfterExit(async ()=>{
                 //console.log('event fired: onAfterExit');
 
-                //console.log(tourguide_instance.backdrop);
-                //console.log(tourguide_instance.isVisible);
-                //console.log(tourguide_instance.activeStep);
-                //console.log(tourguide_instance.dialog);
-
                 $(document.body).attr('data-cbxtakeatour-dialog', 0);
-
-
 
                 CBXTakeatourEvents_do_action('cbxtakeatour_tour_onAfterExit', $, $element, $tour_id, tourguide_instance);
             });
-
-
-            //console.log($steps);
-
-            /*var $tour = new Tour({
-                steps          : $steps,
-                template       : '<div class="cbxtakeatour_popover ' + $layout_class + ' cbxtakeatour_popover_' + $tour_id + '" role="tooltip"> <div class="cbxtatarrow"></div> <h3 class="cbxtakeatour_popover-header"></h3> <div class="cbxtakeatour_popover-body"></div> <div class="cbxtakeatour_popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-secondary" data-role="prev">&laquo; ' + cbxtakeatour.tour_label_prev + '</button> <button class="btn btn-sm btn-secondary" data-role="next">' + cbxtakeatour.tour_label_next + ' &raquo;</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="' + cbxtakeatour.tour_label_pause + '" data-resume-text="' + cbxtakeatour.tour_label_resume + '">' + cbxtakeatour.tour_label_pause + '</button> </div> <button class="btn btn-sm btn-secondary" data-role="end">' + cbxtakeatour.tour_label_endtour + '</button> </div> </div>',
-                onStart        : function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onStart', $, $element, $tour_id, tour);
-                },
-                onEnd          : function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onEnd', $, $element, $tour_id, tour);
-
-                    if ($url !== '') {
-                        document.location.href = $url;
-                        return (new $.Deferred()).promise();
-                    }
-                },
-                onShow         : function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onShow', $, $element, $tour_id, tour);
-                },
-                onShown        : function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onShown', $, $element, $tour_id, tour);
-                },
-                onHide         : function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onHide', $, $element, $tour_id, tour);
-                },
-                onHidden       : function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onHidden', $, $element, $tour_id, tour);
-                },
-                onNext         : function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onNext', $, $element, $tour_id, tour);
-                },
-                onPrev         : function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onPrev', $, $element, $tour_id, tour);
-                },
-                onPause        : function (tour, duration) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onPause', $, $element, $tour_id, tour);
-                },
-                onResume       : function (tour, duration) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onResume', $, $element, $tour_id, tour);
-                },
-                onRedirectError: function (tour) {
-                    CBXTakeatourEvents_do_action('cbxtakeatour_tour_onRedirectError', $, $element, $tour_id, tour);
-                }
-            });
-
-            //$tour.init();
-            //$tour.start();
-
-            $tour.restart();*/
         }//end function cbxtakeatour_render
     }); //dom ready
 })(jQuery);

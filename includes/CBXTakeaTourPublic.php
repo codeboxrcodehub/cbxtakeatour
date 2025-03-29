@@ -44,9 +44,9 @@ class CBXTakeaTourPublic {
 	 * for setting
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string $settings_api The current version of this plugin.
+	 * @var      string $settings The current version of this plugin.
 	 * */
-	private $settings_api;
+	private $settings;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -65,7 +65,7 @@ class CBXTakeaTourPublic {
 			$this->version = current_time( 'timestamp' ); //for development time only
 		}
 
-		$this->settings_api = new CBXTakeaTour_Settings();
+		$this->settings = new CBXTakeaTour_Settings();
 	}//end method construct
 
 	/**

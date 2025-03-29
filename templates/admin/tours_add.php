@@ -40,17 +40,18 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                     </div>
                     <div class="wp-heading-wrap-right pull-right">
 						<?php do_action( 'cbxtakeatour_wpheading_wrap_right_before', 'tours-add-edit' ); ?>
-                        <a href="<?php echo esc_url(admin_url( 'admin.php?page=cbxtakeatour-listing' )); ?>" class="button secondary icon icon-inline">
+                        <a href="<?php echo esc_url( admin_url( 'admin.php?page=cbxtakeatour-listing' ) ); ?>"
+                           class="button secondary icon icon-inline">
                             <i class="cbx-icon">
 								<?php echo $back_svg; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                             </i>
                             <span class="button-label"><?php esc_html_e( 'Back', 'cbxtakeatour' ); ?></span>
                         </a>
                         <a class="button primary ld-ext-right" id="cbxtakeatour_submit" href="#">
-                            <?php esc_attr_e( 'Save Changes', 'cbxtakeatour' ); ?>
+							<?php esc_attr_e( 'Save Changes', 'cbxtakeatour' ); ?>
                             <span class="ld ld-spin ld-ring"></span>
                         </a>
-                        <!--<a href="<?php /*echo esc_url(admin_url( 'admin.php?page=cbxtakeatour-settings' )); */?>" class="button outline primary"><?php /*esc_html_e( 'Global Settings', 'cbxtakeatour' ); */?></a>-->
+                        <!--<a href="<?php /*echo esc_url(admin_url( 'admin.php?page=cbxtakeatour-settings' )); */ ?>" class="button outline primary"><?php /*esc_html_e( 'Global Settings', 'cbxtakeatour' ); */ ?></a>-->
 						<?php do_action( 'cbxtakeatour_wpheading_wrap_right_after', 'tours-add-edit' ); ?>
                     </div>
                 </div>
@@ -61,7 +62,8 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
     <div class="container">
 		<?php do_action( 'cbxtakeatour_tours_add_before_postbox', $post_id ); ?>
 		<?php do_action( 'cbxtakeatour_tours_add_before', $post_id ); ?>
-        <form data-busy="0" id="cbxtakeatour_add" method="post" class="cbx_form_wrapper cbx_form_wrapper_tour" novalidate>
+        <form data-busy="0" id="cbxtakeatour_add" method="post" class="cbx_form_wrapper cbx_form_wrapper_tour"
+              novalidate>
 			<?php do_action( 'cbxtakeatour_tours_add_form_start', $post_id ); ?>
             <div class="row">
                 <div class="col-8">
@@ -69,7 +71,8 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                         <div class="inside">
                             <div class="cbxtakeatour-form-field">
                                 <label for="post_title"><?php esc_html_e( 'Tour Title', 'cbxtakeatour' ); ?></label>
-                                <input required id="post_title" type="text" name="post_title" value="<?php echo esc_attr( $post_title ); ?>"/>
+                                <input required id="post_title" type="text" name="post_title"
+                                       value="<?php echo esc_attr( $post_title ); ?>"/>
                             </div>
                         </div>
                     </div>
@@ -79,11 +82,14 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 
 							$meta = get_post_meta( $post_id, '_cbxtourmeta', true );
 
-							$layout     = isset( $meta['layout'] ) ? esc_attr( wp_unslash( $meta['layout'] ) ) : 'basic';
-							$auto_start = isset( $meta['auto_start'] ) ? intval( $meta['auto_start'] ) : 0;
 
-							$display      = isset( $meta['display'] ) ? intval( $meta['display'] ) : 1;
+
+							$layout       = isset( $meta['layout'] ) ? esc_attr( wp_unslash( $meta['layout'] ) ) : 'basic';
+							$auto_start   = isset( $meta['auto_start'] ) ? absint( $meta['auto_start'] ) : 0;
+							$display      = isset( $meta['display'] ) ? absint( $meta['display'] ) : 1;
+							//$context      = isset( $meta['context'] ) ? absint( $meta['context'] ) : 0; //public = 0, admin = 1
 							$redirect_url = ( isset( $meta['redirect_url'] ) && $meta['redirect_url'] != '' ) ? esc_url( $meta['redirect_url'] ) : '';
+
 
 							$tour_button_text = isset( $meta['tour_button_text'] ) ? esc_attr( wp_unslash( $meta['tour_button_text'] ) ) : esc_html__( 'Take a tour',
 								'cbxtakeatour' );
@@ -204,17 +210,17 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 
 									?>
 
-                                    <div class="cbxtourmetabox_entry cbxtourmetabox_entry-<?php echo absint($i); ?>"
-                                         data-entry-no="<?php echo absint($i); ?>">
+                                    <div class="cbxtourmetabox_entry cbxtourmetabox_entry-<?php echo absint( $i ); ?>"
+                                         data-entry-no="<?php echo absint( $i ); ?>">
                                         <div class="cbxtourmetabox_step_heading"><span
                                                     class="dashicons dashicons-editor-justify draggable"></span>
                                             <h3 class="step_heading_title"
                                                 style="display: inline"><?php esc_html_e( 'Step', 'cbxtakeatour' ); ?>
-                                                #<?php echo absint($i + 1); ?>
-                                                : <?php echo esc_html($title); ?></h3><a href="#"
-                                                                               class="dashicons dashicons-post-trash delete-step"
-                                                                               title="<?php esc_html_e( 'Delete Step',
-												                                   'cbxtakeatour' ) ?>"></a>
+                                                #<?php echo absint( $i + 1 ); ?>
+                                                : <?php echo esc_html( $title ); ?></h3><a href="#"
+                                                                                           class="dashicons dashicons-post-trash delete-step"
+                                                                                           title="<?php esc_html_e( 'Delete Step',
+												                                               'cbxtakeatour' ) ?>"></a>
                                         </div>
 
                                         <div class="cbxtourmetabox_wrap">
@@ -222,40 +228,42 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                                                 <tbody>
                                                 <tr>
                                                     <th scope="row"><label
-                                                                for="cbxtourmetabox_fields_element_<?php echo absint($i); ?>"><?php esc_html_e( 'Element',
+                                                                for="cbxtourmetabox_fields_element_<?php echo absint( $i ); ?>"><?php esc_html_e( 'Element',
 																'cbxtakeatour' ) ?></label>
                                                     </th>
                                                     <td>
-                                                        <input id="cbxtourmetabox_fields_element_<?php echo absint($i); ?>"
+                                                        <input id="cbxtourmetabox_fields_element_<?php echo absint( $i ); ?>"
                                                                autocomplete="new-password"
-                                                               type="text" name="cbxtourmeta[steps][<?php echo absint($i); ?>][element]"
+                                                               type="text"
+                                                               name="cbxtourmeta[steps][<?php echo absint( $i ); ?>][element]"
                                                                placeholder="<?php esc_html_e( '#html_element_id',
 															       'cbxtakeatour' ) ?>"
-                                                               value="<?php echo esc_attr($element); ?>"/>
+                                                               value="<?php echo esc_attr( $element ); ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row"><label
-                                                                for="cbxtourmetabox_fields_title_<?php echo absint($i); ?>"><?php esc_html_e( 'Title',
+                                                                for="cbxtourmetabox_fields_title_<?php echo absint( $i ); ?>"><?php esc_html_e( 'Title',
 																'cbxtakeatour' ) ?></label>
                                                     </th>
                                                     <td>
-                                                        <input id="cbxtourmetabox_fields_title_<?php echo absint($i); ?>"
+                                                        <input id="cbxtourmetabox_fields_title_<?php echo absint( $i ); ?>"
                                                                autocomplete="new-password"
-                                                               type="text" name="cbxtourmeta[steps][<?php echo absint($i); ?>][title]"
+                                                               type="text"
+                                                               name="cbxtourmeta[steps][<?php echo absint( $i ); ?>][title]"
                                                                placeholder="<?php esc_html_e( 'Title', 'cbxtakeatour' ) ?>"
-                                                               value="<?php echo esc_attr($title); ?>"/>
+                                                               value="<?php echo esc_attr( $title ); ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row"><label
-                                                                for="cbxtourmetabox_fields_content_<?php echo absint($i); ?>"><?php esc_html_e( 'Content',
+                                                                for="cbxtourmetabox_fields_content_<?php echo absint( $i ); ?>"><?php esc_html_e( 'Content',
 																'cbxtakeatour' ) ?></label></th>
                                                     <td>
 														<?php
-														$editor_id = 'cbxtourmetabox_fields_content_' . absint($i);
+														$editor_id = 'cbxtourmetabox_fields_content_' . absint( $i );
 														$setting   = [
-															'textarea_name' => 'cbxtourmeta[steps][' . absint($i) . '][content]',
+															'textarea_name' => 'cbxtourmeta[steps][' . absint( $i ) . '][content]',
 															'teeny'         => true,
 															'media_buttons' => true,
 															'editor_class'  => '',
@@ -269,11 +277,13 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">
-                                                        <label for="cbxtourmetabox_fields_state_<?php echo absint($i); ?>"><?php esc_html_e( 'Enable/Disable', 'cbxtakeatour' ) ?></label>
+                                                        <label for="cbxtourmetabox_fields_state_<?php echo absint( $i ); ?>"><?php esc_html_e( 'Enable/Disable', 'cbxtakeatour' ) ?></label>
                                                     </th>
                                                     <td>
-                                                        <input id="cbxtourmetabox_fields_state_<?php echo absint($i); ?>" type="checkbox" name="cbxtourmeta[steps][<?php echo absint($i); ?>][state]"
-                                                               value="<?php echo esc_attr($state); ?>" <?php checked( $state, 1 ); ?> />
+                                                        <input id="cbxtourmetabox_fields_state_<?php echo absint( $i ); ?>"
+                                                               type="checkbox"
+                                                               name="cbxtourmeta[steps][<?php echo absint( $i ); ?>][state]"
+                                                               value="<?php echo esc_attr( $state ); ?>" <?php checked( $state, 1 ); ?> />
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -285,7 +295,7 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 								}//end loop
 								echo '</div>';
 
-								echo '<p id="cbxtourmetaboxaddstep_wrap"><a data-counter="' . absint($totalEntries) . '" id="cbxtourmetaboxaddstep" class="button secondary" href="#">' . esc_html__( 'Add Step',
+								echo '<p id="cbxtourmetaboxaddstep_wrap"><a data-counter="' . absint( $totalEntries ) . '" id="cbxtourmetaboxaddstep" class="button secondary" href="#">' . esc_html__( 'Add Step',
 										'cbxtakeatour' ) . '</a> <a ' . ( ( $totalEntries == 0 ) ? ' style="display: none;" ' : '' ) . ' id="cbxtourmetaboxremstep" class="button outline primary" href="#">' . esc_html__( 'Remove All',
 										'cbxtakeatour' ) . '</a></p>';
 
@@ -340,7 +350,7 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 								<?php
 								echo '<br>';
 								echo '<label style="font-weight: bold" for="cbxtourmetabox_fields_redirect_url">' . esc_html__( 'Redirect Url : ', "cbxtakeatour" ) . '</label>';
-								echo '<input name="cbxtourmeta[redirect_url]" placeholder="https://example.com" id="cbxtourmetabox_fields_redirect_url" type="text"  value="' . esc_url($redirect_url) . '" />';
+								echo '<input name="cbxtourmeta[redirect_url]" placeholder="https://example.com" id="cbxtourmetabox_fields_redirect_url" type="text"  value="' . esc_url( $redirect_url ) . '" />';
 								echo '<p class="cbxtakeatoururldec">' . esc_html__( 'The URL link will redirect to the end of the tour.', 'cbxtakeatour' ) . '</p>';
 								?>
 								<?php do_action( 'cbxtour_meta_tab_content_steps_end', $post_id, $tour, $meta ); ?>
@@ -352,6 +362,21 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 									<?php
 									do_action( 'cbxtour_meta_tab_content_setting_start_fields', $post_id, $tour, $meta );
 									?>
+                                    <!--<tr>
+                                        <th scope="row">
+                                            <label for="cbxtourmetabox_fields_context">
+												<?php /*esc_html_e( 'Tour Display Context', 'cbxtakeatour' ) */?>
+                                            </label>
+                                        </th>
+                                        <td>
+                                            <select id="cbxtourmetabox_fields_context" name="cbxtourmeta[context]">
+                                                <option <?php /*selected( $context, 0 ); */?>
+                                                        value="0"><?php /*esc_html_e( 'Frontend/Public', 'cbxtakeatour' ); */?></option>
+                                                <option <?php /*selected( $context, 1 ); */?>
+                                                        value="1"><?php /*esc_html_e( 'Backend/Admin', 'cbxtakeatour' ); */?></option>
+                                            </select>
+                                        </td>
+                                    </tr>-->
                                     <tr>
                                         <th scope="row">
                                             <label for="cbxtourmetabox_fields_display">
@@ -359,8 +384,9 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                                             </label>
                                         </th>
                                         <td>
-                                            <input id="cbxtourmetabox_fields_display" type="checkbox" name="cbxtourmeta[display]"
-                                                   value="<?php echo absint( $display ); ?>" <?php checked( $display,1 ); ?> />
+                                            <input id="cbxtourmetabox_fields_display" type="checkbox"
+                                                   name="cbxtourmeta[display]"
+                                                   value="<?php echo absint( $display ); ?>" <?php checked( $display, 1 ); ?> />
                                         </td>
                                     </tr>
                                     <tr>
@@ -370,7 +396,8 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                                         </th>
                                         <td>
 
-                                            <input id="cbxtourmetabox_fields_autostart" type="checkbox" name="cbxtourmeta[auto_start]"
+                                            <input id="cbxtourmetabox_fields_autostart" type="checkbox"
+                                                   name="cbxtourmeta[auto_start]"
                                                    value="<?php echo absint( $auto_start ); ?>" <?php checked( $auto_start, 1 ); ?> />
                                         </td>
                                     </tr>
@@ -380,8 +407,9 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 													'cbxtakeatour' ) ?></label>
                                         </th>
                                         <td>
-                                            <input id="cbxtourmetabox_fields_tour_button_block" type="checkbox" name="cbxtourmeta[tour_button_block]"
-                                                   value="<?php echo absint( $tour_button_block ); ?>" <?php checked( $tour_button_block,1); ?> />
+                                            <input id="cbxtourmetabox_fields_tour_button_block" type="checkbox"
+                                                   name="cbxtourmeta[tour_button_block]"
+                                                   value="<?php echo absint( $tour_button_block ); ?>" <?php checked( $tour_button_block, 1 ); ?> />
                                         </td>
                                     </tr>
                                     <tr>
@@ -419,21 +447,23 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 									<?php foreach ( $new_fields as $new_field_key => $new_field ): ?>
                                         <tr>
                                             <th scope="row">
-                                                <label for="cbxtourmetabox_fields_<?php echo esc_attr( $new_field_key ); ?>"><?php echo esc_html($new_field['label']); ?>
+                                                <label for="cbxtourmetabox_fields_<?php echo esc_attr( $new_field_key ); ?>"><?php echo esc_html( $new_field['label'] ); ?>
                                                 </label>
                                             </th>
                                             <td>
 
                                                 <input id="cbxtourmetabox_fields_<?php echo esc_attr( $new_field_key ); ?>"
-                                                       type="checkbox" name="cbxtourmeta[<?php echo esc_attr( $new_field_key ); ?>]"
-                                                       value="<?php echo intval( $new_field['value'] ); ?>" <?php checked( $new_field['value'],1 ); ?> />
+                                                       type="checkbox"
+                                                       name="cbxtourmeta[<?php echo esc_attr( $new_field_key ); ?>]"
+                                                       value="<?php echo intval( $new_field['value'] ); ?>" <?php checked( $new_field['value'], 1 ); ?> />
                                             </td>
                                         </tr>
 									<?php endforeach; ?>
 
 
                                     <tr>
-                                        <td colspan="2" style="padding-right: 0px; padding-left: 0px; font-weight: bold">
+                                        <td colspan="2"
+                                            style="padding-right: 0px; padding-left: 0px; font-weight: bold">
 											<?php esc_html_e( 'Select Tour layout (Need to save the post)',
 												'cbxtakeatour' ); ?>
                                         </td>
@@ -481,7 +511,8 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                 </div>
                 <div class="col-4">
                     <div class="postbox">
-                        <div class="postbox-header"><h2><?php esc_html_e( 'Tour Preview', 'cbxtakeatour' ); ?></h2></div>
+                        <div class="postbox-header">
+                            <h2><?php esc_html_e( 'Tour Preview(With Sample Data)', 'cbxtakeatour' ); ?></h2></div>
                         <div class="inside">
 							<?php
 
@@ -607,9 +638,10 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                                 <div class="cbxtakeatour_button">
                                     <h3><?php esc_html_e( 'Tour Button/Link Preview', 'cbxtakeatour' ); ?></h3>
                                     <span class="cbxtakeatour-btn-parent cbxtakeatour-btn-parent-<?php echo esc_attr( $tour_button_align ); ?>">
-                                                    <a href="#" data-tour-id="<?php echo absint($post_id); ?>"
+                                                    <a href="#" data-tour-id="<?php echo absint( $post_id ); ?>"
                                                        class="cbxtakeatour  cbxtakeatour-btn <?php echo esc_attr( $button_class ); ?> cbxtakeatour-btn-<?php echo intval( $post_id ); ?>"><?php echo esc_attr( $tour_button_text ); ?></a>
                                                 </span>
+                                    <p style="margin-top: 10px;"><?php esc_html_e( 'Note: This tour preview doesn not refect the current tour steps/settings.', 'cbxtakeatour' ); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -629,18 +661,21 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 									?>
                                 </select>
                             </div>
-                            <input type="hidden" name="post_id" value="<?php echo absint($post_id); ?>"/>
+                            <input type="hidden" name="post_id" value="<?php echo absint( $post_id ); ?>"/>
                             <input type="hidden" name="action" value="cbxtakeatour_save_tour_post"/>
-                            <input type="hidden" name="security" value="<?php echo esc_attr(wp_create_nonce( "cbxtakeatournonce" )); ?>"/>
+                            <input type="hidden" name="security"
+                                   value="<?php echo esc_attr( wp_create_nonce( "cbxtakeatournonce" ) ); ?>"/>
 
                             <!--<div class="pull-wrap">
                                 <div class="pull-right">
-                                    <button class="button primary" id="cbxtakeatour_submit" type="submit"><?php /*esc_attr_e( 'Save Changes', 'cbxtakeatour' ); */?></button>
+                                    <button class="button primary" id="cbxtakeatour_submit" type="submit"><?php /*esc_attr_e( 'Save Changes', 'cbxtakeatour' ); */ ?></button>
                                 </div>
                             </div>-->
                             <div class="pull-wrap">
                                 <div class="pull-right">
-                                    <a class="button outline error" id="cbxtakeatour_trashit" data-post-id="<?php echo absint($post_id); ?>" href="#"><?php esc_html_e( 'Move to Trash', 'cbxtakeatour' ); ?></a>
+                                    <a class="button outline error" id="cbxtakeatour_trashit"
+                                       data-post-id="<?php echo absint( $post_id ); ?>"
+                                       href="#"><?php esc_html_e( 'Move to Trash', 'cbxtakeatour' ); ?></a>
                                 </div>
                             </div>
 
@@ -656,8 +691,8 @@ $back_svg = cbxtakeatour_load_svg( 'icon_back' );
                         <div class="inside">
                             <div class="cbxshortcode-wrap">
 								<?php
-								echo '<span data-clipboard-text=\'[cbxtakeatour id="' . absint($post_id) . '"]\' title="' . esc_html__( "Click to clipboard",
-										"cbxtakeatour" ) . '" id="cbxtakeatourshortcode-' . absint($post_id) . '" class="cbxshortcode cbxshortcode-edit cbxshortcode-' . absint($post_id) . '">[cbxtakeatour id="' . absint($post_id) . '"]</span>';
+								echo '<span data-clipboard-text=\'[cbxtakeatour id="' . absint( $post_id ) . '"]\' title="' . esc_html__( "Click to clipboard",
+										"cbxtakeatour" ) . '" id="cbxtakeatourshortcode-' . absint( $post_id ) . '" class="cbxshortcode cbxshortcode-edit cbxshortcode-' . absint( $post_id ) . '">[cbxtakeatour id="' . absint( $post_id ) . '"]</span>';
 								echo '<span class="button outline primary icon cbxballon_ctp" aria-label="' . esc_html__( 'Click to copy', 'cbxtakeatour' ) . '" data-balloon-pos="down"><i></i></span>';
 								?>
                             </div>

@@ -93,3 +93,46 @@ if ( ! function_exists( 'cbxtakeatour_icon_path' ) ) {
 		return apply_filters( 'cbxtakeatour_icon_path', $directory );
 	}//end method cbxtakeatour_icon_path
 }
+
+if(!function_exists('cbxtakeatour_is_rest_api_request')){
+	/**
+	 * Check if doing rest request
+	 *
+	 * @return bool
+	 */
+	function cbxtakeatour_is_rest_api_request() {
+		if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+			return true;
+		}
+
+		if ( empty( $_SERVER['REQUEST_URI'] ) ) {
+			return false;
+		}
+
+		$rest_prefix = trailingslashit( rest_get_url_prefix() );
+		return ( false !== strpos( $_SERVER['REQUEST_URI'], $rest_prefix ) );
+	}//end function cbxtakeatour_is_rest_api_request
+}
+
+if(!function_exists('cbxtakeatour_doing_it_wrong')){
+	/**
+	 * Wrapper for _doing_it_wrong().
+	 *
+	 * @since  1.0.0
+	 * @param string $function Function used.
+	 * @param string $message Message to log.
+	 * @param string $version Version the message was added in.
+	 */
+	function cbxtakeatour_doing_it_wrong( $function, $message, $version ) {
+		// @codingStandardsIgnoreStart
+		$message .= ' Backtrace: ' . wp_debug_backtrace_summary();
+
+		if ( wp_doing_ajax() || cbxtakeatour_is_rest_api_request() ) {
+			do_action( 'doing_it_wrong_run', $function, $message, $version );
+			error_log( "{$function} was called incorrectly. {$message}. This message was added in version {$version}." );
+		} else {
+			_doing_it_wrong( $function, $message, $version );
+		}
+		// @codingStandardsIgnoreEnd
+	}//end function cbxtakeatour_doing_it_wrong
+}

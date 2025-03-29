@@ -46,15 +46,15 @@ class CBXTakeaTourAdmin {
 	 * for setting
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string $settings_api The current version of this plugin.
+	 * @var      string $settings The current version of this plugin.
 	 * */
-	private $settings_api;
+	private $settings;
 
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @param  string  $plugin_name  The name of this plugin.
-	 * @param  string  $version  The version of this plugin.
+	 * @param string $plugin_name The name of this plugin.
+	 * @param string $version The version of this plugin.
 	 *
 	 * @since    1.0.0
 	 *
@@ -67,7 +67,7 @@ class CBXTakeaTourAdmin {
 			$this->version = current_time( 'timestamp' ); //for development time only
 		}
 
-		$this->settings_api = new CBXTakeaTour_Settings();
+		$this->settings = new CBXTakeaTour_Settings();
 	}//end of construct
 
 	/**
@@ -75,11 +75,11 @@ class CBXTakeaTourAdmin {
 	 */
 	public function setting_init() {
 		//set the settings
-		$this->settings_api->set_sections( $this->get_settings_sections() );
-		$this->settings_api->set_fields( $this->get_settings_fields() );
+		$this->settings->set_sections( $this->get_settings_sections() );
+		$this->settings->set_fields( $this->get_settings_fields() );
 
 		//initialize settings
-		$this->settings_api->admin_init();
+		$this->settings->admin_init();
 	}//end setting_init
 
 	/**
@@ -203,10 +203,10 @@ class CBXTakeaTourAdmin {
 				$tour = get_post( $post_id );
 				if ( $tour !== null ) {
 					$template_loaded = true;
-                    //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					echo cbxtakeatour_get_template_html( 'admin/tours_add.php', [
 						'admin_ref' => $this,
-						'settings'  => $this->settings_api,
+						'settings'  => $this->settings,
 						'id'        => $post_id,
 						'ID'        => $post_id,//compatibility fix
 						'tour'      => $tour,
@@ -223,7 +223,7 @@ class CBXTakeaTourAdmin {
 			//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo cbxtakeatour_get_template_html( 'admin/tours_list.php', [
 				'admin_ref' => $this,
-				'settings'  => $this->settings_api
+				'settings'  => $this->settings
 			] );
 		}
 
@@ -231,7 +231,7 @@ class CBXTakeaTourAdmin {
 			//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo cbxtakeatour_get_template_html( 'admin/tours_error.php', [
 				'admin_ref'  => $this,
-				'settings'   => $this->settings_api,
+				'settings'   => $this->settings,
 				'error_text' => esc_html__( 'Invalid tour or you don\'t have permission to edit this tour.', 'cbxtakeatour' )
 			] );
 		}
@@ -246,7 +246,7 @@ class CBXTakeaTourAdmin {
 		//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo cbxtakeatour_get_template_html( 'admin/settings.php', [
 			'admin_ref' => $this,
-			'settings'  => $this->settings_api
+			'settings'  => $this->settings
 		] );
 	}//end menu_settings
 
@@ -447,7 +447,10 @@ class CBXTakeaTourAdmin {
 		//tour listing
 		if ( $page == 'cbxtakeatour-listing' && $view == '' ) {
 			wp_register_script( 'awesome-notifications', $vendors_url_part . 'awesome-notifications/script.js', [], $version, true );
-			wp_register_script( 'cbxtakeatour-listing', $js_url_part . 'cbxtakeatour-listing.js', [ 'jquery', 'awesome-notifications' ], $version, true );
+			wp_register_script( 'cbxtakeatour-listing', $js_url_part . 'cbxtakeatour-listing.js', [
+				'jquery',
+				'awesome-notifications'
+			], $version, true );
 			wp_localize_script( 'cbxtakeatour-listing', 'cbxtakeatour_listing', apply_filters( 'cbxtakeatour-listing-vars', $translation_placeholder ) );
 			wp_enqueue_script( 'jquery' );
 			wp_enqueue_script( 'awesome-notifications' );
@@ -464,7 +467,6 @@ class CBXTakeaTourAdmin {
 			wp_register_style( 'cbxtakeatour-public', $css_url_part . 'cbxtakeatour-public.css', [], $version, 'all' );
 			wp_enqueue_style( 'cbxtakeatour-public' );
 
-			//wp_register_script( 'minitoggle', $js_url_part . 'minitoggle.js', [ 'jquery' ], $version, true );
 
 			wp_register_script( 'cbxtakeatour-edit', $js_url_part . 'cbxtakeatour-edit.js',
 				[ 'jquery', 'editor', 'awesome-notifications', 'pickr', 'jquery-validate' ],
@@ -694,7 +696,7 @@ class CBXTakeaTourAdmin {
 		}
 
 		$pro_addon_version  = CBXTakeaTourHelper::get_any_plugin_version( 'cbxtakeatourpro/cbxtakeatourpro.php' );
-		$pro_latest_version = '1.1.3';
+		$pro_latest_version = '1.1.4';
 
 
 		if ( $pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ) {
@@ -726,7 +728,7 @@ class CBXTakeaTourAdmin {
 	public function plugin_activate_upgrade_notices() {
 		$setting_url     = esc_url( admin_url( 'admin.php?page=cbxtakeatour-settings' ) );
 		$log_listing_url = admin_url( 'admin.php?page=cbxtakeatour-listing' );
-        $product_url = 'https://codeboxr.com/product/cbx-tour-user-walkthroughs-guided-tours-for-wordpress/';
+		$product_url     = 'https://codeboxr.com/product/cbx-tour-user-walkthroughs-guided-tours-for-wordpress/';
 
 		// Check the transient to see if we've just activated the plugin
 		if ( get_transient( 'cbxtakeatour_activated_notice' ) ) {
@@ -734,10 +736,17 @@ class CBXTakeaTourAdmin {
 			/* translators: 1. Plugin version  */
 			echo '<p>' . sprintf( wp_kses( __( 'Thanks for installing/deactivating <strong>CBX Tour - User Walkthroughs & Guided Tours</strong> V%s - Codeboxr Team',
 					'cbxtakeatour' ), [ 'strong' => [] ] ),
-					esc_attr(CBXTAKEATOUR_PLUGIN_VERSION) ) . '</p>';
+					esc_attr( CBXTAKEATOUR_PLUGIN_VERSION ) ) . '</p>';
 			/* translators: 1. Plugin setting url, 2. Product external url, 3. Log listing url  */
 			echo '<p>' . sprintf( wp_kses( __( 'Check <a style="color:#6648fe !important; font-weight: bold;" href="%1$s">Settings</a> | <a style="color:#6648fe !important; font-weight: bold;" href="%2$s" target="_blank">Documentation</a> | Create <a style="color:#6648fe !important; font-weight: bold;" href="%3$s">Tour</a>',
-					'cbxtakeatour' ), [ 'a' => ['href' => [], 'style' => [], 'target' => [], 'class' => [] ] ] ), esc_url($setting_url), esc_url($product_url), esc_url($log_listing_url) ) . '</p>';
+					'cbxtakeatour' ), [
+					'a' => [
+						'href'   => [],
+						'style'  => [],
+						'target' => [],
+						'class'  => []
+					]
+				] ), esc_url( $setting_url ), esc_url( $product_url ), esc_url( $log_listing_url ) ) . '</p>';
 			echo '</div>';
 
 			// Delete the transient. so we don't keep displaying the activation message
@@ -750,13 +759,20 @@ class CBXTakeaTourAdmin {
 		if ( get_transient( 'cbxtakeatour_upgraded_notice' ) ) {
 			echo '<div class="notice notice-success is-dismissible" style="border-color: #6648fe !important;">';
 
-            /* translators: 1. Plugin version  */
+			/* translators: 1. Plugin version  */
 			echo '<p>' . sprintf( wp_kses( __( 'Thanks for upgrading <strong>CBX Tour - User Walkthroughs & Guided Tours</strong> V%s , enjoy the new features and bug fixes - Codeboxr Team',
-					'cbxtakeatour' ), [ 'strong' => [] ] ),	esc_attr(CBXTAKEATOUR_PLUGIN_VERSION) ) . '</p>';
+					'cbxtakeatour' ), [ 'strong' => [] ] ), esc_attr( CBXTAKEATOUR_PLUGIN_VERSION ) ) . '</p>';
 
 			/* translators: 1. Plugin setting url, 2. Product external url, 3. Log listing url  */
-            echo '<p>' . sprintf( wp_kses(__( 'Check <a style="color:#6648fe !important; font-weight: bold;" href="%1$s">Settings</a> | <a style="color:#6648fe !important; font-weight: bold;" href="%2$s" target="_blank">Documentation</a> | Create <a style="color:#6648fe !important; font-weight: bold;" href="%3$s" >Tour</a>', 'cbxtakeatour' ), ['a' => ['href' => [], 'target' => [], 'class' => [], 'style' => []]]), esc_url($setting_url),
-					esc_url($product_url), esc_url($log_listing_url) ) . '</p>';
+			echo '<p>' . sprintf( wp_kses( __( 'Check <a style="color:#6648fe !important; font-weight: bold;" href="%1$s">Settings</a> | <a style="color:#6648fe !important; font-weight: bold;" href="%2$s" target="_blank">Documentation</a> | Create <a style="color:#6648fe !important; font-weight: bold;" href="%3$s" >Tour</a>', 'cbxtakeatour' ), [
+					'a' => [
+						'href'   => [],
+						'target' => [],
+						'class'  => [],
+						'style'  => []
+					]
+				] ), esc_url( $setting_url ),
+					esc_url( $product_url ), esc_url( $log_listing_url ) ) . '</p>';
 			echo '</div>';
 
 			// Delete the transient, so we don't keep displaying the activation message
@@ -789,8 +805,8 @@ class CBXTakeaTourAdmin {
 			echo '<div class="notice notice-success is-dismissible" style="border-color: #6648fe !important;">';
 
 			/* translators: 1. Product external url  */
-			echo '<p>' . sprintf( wp_kses(__( 'CBX Tour - User Walkthroughs & Guided Tours Pro has extended features and more controls, <a style="color:#6648fe !important; font-weight: bold;" target="_blank" href="%s">try it</a>  - Codeboxr Team',
-					'cbxtakeatour' ), ['a' => ['href' => [], 'style' => [], 'target' => [], 'class' => [] ]]),
+			echo '<p>' . sprintf( wp_kses( __( 'CBX Tour - User Walkthroughs & Guided Tours Pro has extended features and more controls, <a style="color:#6648fe !important; font-weight: bold;" target="_blank" href="%s">try it</a>  - Codeboxr Team',
+					'cbxtakeatour' ), [ 'a' => [ 'href' => [], 'style' => [], 'target' => [], 'class' => [] ] ] ),
 					'https://codeboxr.com/product/cbx-tour-user-walkthroughs-guided-tours-for-wordpress//' ) . '</p>';
 			echo '</div>';
 		}
@@ -1052,7 +1068,7 @@ class CBXTakeaTourAdmin {
 	/**
 	 * Show action links on the plugin screen.
 	 *
-	 * @param  mixed  $links  Plugin Action links.
+	 * @param mixed $links Plugin Action links.
 	 *
 	 * @return  array
 	 */
@@ -1071,10 +1087,10 @@ class CBXTakeaTourAdmin {
 	 *
 	 * @access  public
 	 *
-	 * @param  array  $links_array  An array of the plugin's metadata
-	 * @param  string  $plugin_file_name  Path to the plugin file
-	 * @param  array  $plugin_data  An array of plugin data
-	 * @param  string  $status  Status of the plugin
+	 * @param array $links_array An array of the plugin's metadata
+	 * @param string $plugin_file_name Path to the plugin file
+	 * @param array $plugin_data An array of plugin data
+	 * @param string $status Status of the plugin
 	 *
 	 * @return  array       $links_array
 	 */
@@ -1203,7 +1219,13 @@ class CBXTakeaTourAdmin {
 	 */
 	public function plugin_update_message_pro_addons() {
 		/* translators: 1. External Help page 2. External Product page  */
-		echo ' ' . sprintf( wp_kses(__( 'Check how to <a style="color:#9c27b0 !important; font-weight: bold;" href="%1$s"><strong>Update manually</strong></a> , download latest version from <a style="color:#9c27b0 !important; font-weight: bold;" href="%2$s"><strong>My Account</strong></a> section of Codeboxr.com', 'cbxtakeatour' ), ['strong' => [],'a' => ['href' => [], 'style' => []]]), 'https://codeboxr.com/manual-update-pro-addon/', 'https://codeboxr.com/my-account/' );
+		echo ' ' . sprintf( wp_kses( __( 'Check how to <a style="color:#9c27b0 !important; font-weight: bold;" href="%1$s"><strong>Update manually</strong></a> , download latest version from <a style="color:#9c27b0 !important; font-weight: bold;" href="%2$s"><strong>My Account</strong></a> section of Codeboxr.com', 'cbxtakeatour' ), [
+				'strong' => [],
+				'a'      => [
+					'href'  => [],
+					'style' => []
+				]
+			] ), 'https://codeboxr.com/manual-update-pro-addon/', 'https://codeboxr.com/my-account/' );
 	}//end plugin_update_message_pro_addons
 
 	/**
@@ -1339,12 +1361,11 @@ class CBXTakeaTourAdmin {
 		$msg['validation_errors'] = [];
 
 		$validation_errors = [];
-
-		$status_arr = array_keys( CBXTakeaTourHelper::allowed_status() );
+		$status_arr        = array_keys( CBXTakeaTourHelper::allowed_status() );
 
 		$post_id     = isset( $_REQUEST['post_id'] ) ? absint( $_REQUEST['post_id'] ) : 0;
-		$post_status = isset( $_REQUEST['post_status'] ) ? sanitize_text_field( wp_unslash($_REQUEST['post_status']) ) : 'draft';
-		$post_title  = isset( $_REQUEST['post_title'] ) ? sanitize_text_field( wp_unslash($_REQUEST['post_title']) ) : esc_html__( 'Untitled tour', 'cbxtakeatour' );
+		$post_status = isset( $_REQUEST['post_status'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['post_status'] ) ) : 'draft';
+		$post_title  = isset( $_REQUEST['post_title'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['post_title'] ) ) : esc_html__( 'Untitled tour', 'cbxtakeatour' );
 
 		//check if user can edit this tour post
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
@@ -1360,6 +1381,7 @@ class CBXTakeaTourAdmin {
 
 
 		$valid = true;
+
 		//validation
 		if ( $post_title == '' ) {
 			$validation_errors['post_title'] = esc_html__( 'Sorry tour title can not be empty', 'cbxtakeatour' );
@@ -1374,7 +1396,6 @@ class CBXTakeaTourAdmin {
 
 			$msg['success']           = 0;
 			$msg['validation_errors'] = $validation_errors;
-
 			wp_send_json( $msg );
 		}
 
@@ -1392,7 +1413,7 @@ class CBXTakeaTourAdmin {
 
 			//now update post meta
 			if ( ! empty( $_POST['cbxtourmeta'] ) ) {
-				$postData      = isset($_POST['cbxtourmeta']) ? wp_unslash( $_POST['cbxtourmeta']) : []; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+				$postData   = isset( $_POST['cbxtourmeta'] ) ? wp_unslash( $_POST['cbxtourmeta'] ) : []; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 				$valid_data = [];
 
 				$post_steps = isset( $postData['steps'] ) ? $postData['steps'] : [];
@@ -1401,31 +1422,29 @@ class CBXTakeaTourAdmin {
 				foreach ( $post_steps as $key => $step ) {
 					if ( is_numeric( $key ) ) {
 
-						$valid_data['steps'][ $i ]['element'] = sanitize_text_field( wp_unslash($step['element']) );
+						$valid_data['steps'][ $i ]['element'] = sanitize_text_field( wp_unslash( $step['element'] ) );
 						$valid_data['steps'][ $i ]['content'] = wp_kses( $step['content'], CBXTakeaTourHelper::allowedHtmlTags() );
-						$valid_data['steps'][ $i ]['title']   = sanitize_text_field( wp_unslash($step['title']) );
+						$valid_data['steps'][ $i ]['title']   = sanitize_text_field( wp_unslash( $step['title'] ) );
 						$valid_data['steps'][ $i ]['state']   = isset( $step['state'] ) ? 1 : 0;
-
 						$i ++;
 					}
 				}
 
 				$valid_data['redirect_url'] = ( isset( $postData['redirect_url'] ) && $postData['redirect_url'] != '' ) ? esc_url( $postData['redirect_url'] ) : '';
 
-
-
+				//$valid_data['context']           = isset( $postData['context'] ) ? absint($postData['context']) : 0; //0 = public , 1= admin
 				$valid_data['display']           = isset( $postData['display'] ) ? 1 : 0;
 				$valid_data['auto_start']        = isset( $postData['auto_start'] ) ? 1 : 0;
 				$valid_data['tour_button_block'] = isset( $postData['tour_button_block'] ) ? 1 : 0;
 				$valid_data['tour_button_align'] = isset( $postData['tour_button_align'] ) ? sanitize_text_field( $postData['tour_button_align'] ) : '';
 				$valid_data['tour_button_text']  = isset( $postData['tour_button_text'] ) ? sanitize_text_field( $postData['tour_button_text'] ) : esc_html__( 'Take a Tour',
 					'cbxtakeatour' );
-				$valid_data['layout']            =  isset($postData['layout'])? sanitize_text_field( wp_unslash($postData['layout']) ) : 'basic';
+				$valid_data['layout']            = isset( $postData['layout'] ) ? sanitize_text_field( wp_unslash( $postData['layout'] ) ) : 'basic';
 
 
 				//new fields
 				$valid_data['dialog_animate']        = isset( $postData['dialog_animate'] ) ? 1 : 0;
-				$valid_data['hide_prev']             = isset( $postData['hide_prev'] ) ? 1: 0;
+				$valid_data['hide_prev']             = isset( $postData['hide_prev'] ) ? 1 : 0;
 				$valid_data['hide_next']             = isset( $postData['hide_next'] ) ? 1 : 0;
 				$valid_data['backdrop_animate']      = isset( $postData['backdrop_animate'] ) ? 1 : 0;
 				$valid_data['show_step_dots']        = isset( $postData['show_step_dots'] ) ? 1 : 0;
@@ -1448,7 +1467,6 @@ class CBXTakeaTourAdmin {
 			$msg['message'] = esc_html__( 'Tour save/update failed', 'cbxtakeatour' );
 			$msg['success'] = 0;
 		}
-
 
 		wp_send_json( $msg );
 	}//end method save_tour_post

@@ -79,10 +79,19 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                 <div class="cbx-backend-card dashboard-changelog">
                     <div class="header">
                         <div class="text">
-                            <h2><?php esc_html_e( 'Changelog Core Plugin', 'cbxtakeatour' ); ?></h2>
+                            <h2><?php esc_html_e( 'Core Plugin Changelog', 'cbxtakeatour' ); ?></h2>
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.1.4
+                            </p>
+                            <ul>
+                                <li>[fixed] Tour step content data save issue solved.</li>
+                                <li>[new] Pro addon V1.1.4 release and compatible</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.1.3
@@ -103,24 +112,24 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                                 <li>[pro addon] New version of pro addon(V1.1.2) released</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.1.1
-                            </p>
-                            <ul>
-                                <li>[update] Setting library 'select' field update to handle both single select and multi select using same method</li>
-                                <li>[improvement] PHP 8.x compatibility check</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
                     <div class="header">
                         <div class="text">
-                            <h2><?php esc_html_e( 'Changelog Pro Addon', 'cbxtakeatour' ); ?></h2>
+                            <h2><?php esc_html_e( 'Pro Addon Changelog', 'cbxtakeatour' ); ?></h2>
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.1.4
+                            </p>
+                            <ul>
+                                <li>[updated] Minor changes</li>
+                                <li>[updated] Core plugin V1.1.4 released and compatible</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.1.3
@@ -137,14 +146,6 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                             </p>
                             <ul>
                                 <li>improvement] Security improvement</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.1.1
-                            </p>
-                            <ul>
-                                <li>[improvement] PHP 8.x compatibility check</li>
                             </ul>
                         </div>
                     </div>

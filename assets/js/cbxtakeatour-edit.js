@@ -302,77 +302,14 @@
                     $color_field_fire.data('current-color', '');
                     $color_field.val('');
                 }
-
-
-                //console.log(instance);
-                //console.log(color.toHEXA());
-                //console.log(color.toHEX);
             }).on('clear', instance => {
-                //console.log('Event: "clear"', instance);
-
-
             }).on('change', (color, source, instance) => {
-                //console.log('Event: "change"', color, source, instance);
-
             }).on('changestop', (source, instance) => {
-                //console.log('Event: "changestop"', source, instance);
             }).on('cancel', instance => {
-                //console.log('Event: "cancel"', instance);
             }).on('swatchselect', (color, instance) => {
-                //console.log('Event: "swatchselect"', color, instance);
             });
 
         });
-
-        /*$('.minitoggle_trigger').each(function (index, element) {
-            cbxtakeatour_miniToggle($, $(element));
-
-
-        });*/
-
-
-        /*Add color picker */
-        /*var myOptions = {
-            // you can declare a default color here,
-            // or in the data-default-color attribute on the input
-            defaultColor: false,
-            // a callback to fire whenever the color changes to a valid color
-            change: function (event, ui) {
-            },
-            // a callback to fire when the input is emptied or an invalid color
-            clear: function () {
-            },
-            // hide the color picker controls on load
-            hide: true,
-            // show a group of common colors beneath the square
-            // or, supply an array of colors to customize further
-            palettes: true
-        };
-
-        $('.cbxtakeatour-color-field').wpColorPicker(myOptions);*/
-
-        //select all text on click of shortcode text
-        /*$('.cbxtakeatourshortcode').on('click', function (e) {
-            var text = $(this).text();
-            var $this = $(this);
-            var $input = $('<input class="cbxtakeatourshortcode-text" type="text">');
-            $input.prop('value', text);
-            $input.insertAfter($(this));
-            $input.focus();
-            $input.select();
-            $this.hide();
-
-            try {
-                document.execCommand('copy');
-            } catch (err) {
-
-            }
-
-            $input.focusout(function () {
-                $this.show();
-                $input.remove();
-            });
-        });*/
 
 
         //$('.wrap').addClass('cbx-chota cbxtakeatour-page-wrapper cbxtakeatour-addedit-wrapper');
@@ -387,7 +324,6 @@
         //$(cbxtakeatour_edit.global_setting_link_html).insertAfter('.page-title-action');
 
         //submit form and validation
-
         var $tour_form           = $('#cbxtakeatour_add');
         var $tour_form_validator = $tour_form.validate({
             /* errorPlacement: function (error, element) {
@@ -421,19 +357,20 @@
 
             var $form = $(this);
 
+            // Trigger tinyMCE to save its content to the textarea
+            if (typeof tinymce !== 'undefined') {
+                tinymce.triggerSave();
+            }
+
 
             if ($tour_form_validator.valid()) {
                 e.preventDefault();
 
                 $tour_form.data('busy', 0);
 
-                //$tour_form.data('busy', 1);
-                //$tour_form.find('.cbxpetition_ajax_icon').show();
+
                 $('#cbxtakeatour_submit').prop('disabled', true);
                 $('#cbxtakeatour_submit').addClass('running');
-
-                //$form_wrapper.find('.cbxpetition-error-messages').empty();
-                //$form_wrapper.find('.cbxpetition-error-messages').empty();
 
 
                 var form_data = $form.serialize();
@@ -449,10 +386,7 @@
 
                 request.done(function (data) {
 
-                    //console.log(data.validation_errors);
-
                     if (Object.keys(data.validation_errors).length > 0) {
-                        //console.log(data.validation_errors);
                         var val_errors = data.validation_errors;
                         $tour_form_validator.showErrors(val_errors);
 
@@ -467,14 +401,12 @@
                     $tour_form.data('busy', 0);
                     $('#cbxtakeatour_submit').prop('disabled', false);
                     $('#cbxtakeatour_submit').removeClass('running');
-                    // $tour_form.find('.cbxpetition_ajax_icon').hide();
                 });
 
                 request.fail(function (jqXHR, textStatus) {
                     $tour_form.data('busy', 0);
                     $('#cbxtakeatour_submit').prop('disabled', false);
                     $('#cbxtakeatour_submit').removeClass('running');
-                    // $tour_form.find('.cbxpetition_ajax_icon').hide();
 
 
                     //awn notification

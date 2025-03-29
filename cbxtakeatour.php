@@ -15,8 +15,8 @@
  * @wordpress-plugin
  * Plugin Name:       CBX Tour - User Walkthroughs & Guided Tours
  * Plugin URI:        https://codeboxr.com/product/cbx-tour-user-walkthroughs-guided-tours-for-wordpress//
- * Description:       Interactive tour creator for product/service feature for wordpress
- * Version:           1.1.3
+ * Description:       Interactive tour creator for product/service feature for WordPress
+ * Version:           1.1.4
  * Author:            Codeboxr Team
  * Author URI:        https://codeboxr.com
  * License:           GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 defined( 'CBXTAKEATOUR_PLUGIN_NAME' ) or define( 'CBXTAKEATOUR_PLUGIN_NAME', 'cbxtakeatour' );
-defined( 'CBXTAKEATOUR_PLUGIN_VERSION' ) or define( 'CBXTAKEATOUR_PLUGIN_VERSION', '1.1.3' );
+defined( 'CBXTAKEATOUR_PLUGIN_VERSION' ) or define( 'CBXTAKEATOUR_PLUGIN_VERSION', '1.1.4' );
 defined( 'CBXTAKEATOUR_BASE_NAME' ) or define( 'CBXTAKEATOUR_BASE_NAME', plugin_basename( __FILE__ ) );
 defined( 'CBXTAKEATOUR_ROOT_PATH' ) or define( 'CBXTAKEATOUR_ROOT_PATH', plugin_dir_path( __FILE__ ) );
 defined( 'CBXTAKEATOUR_ROOT_URL' ) or define( 'CBXTAKEATOUR_ROOT_URL', plugin_dir_url( __FILE__ ) );
