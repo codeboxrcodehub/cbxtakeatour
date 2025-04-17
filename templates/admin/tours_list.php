@@ -9,6 +9,9 @@
  * @package    cbxtakeatour
  * @subpackage cbxtakeatour/templates/admin
  */
+
+use cbxtakeatour\includes\Helpers\CBXTakeaTourHelper;
+
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }

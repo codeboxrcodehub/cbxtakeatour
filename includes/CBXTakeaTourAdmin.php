@@ -10,6 +10,8 @@
  * @subpackage CBXTakeaTour/admin
  */
 
+use cbxtakeatour\includes\Helpers\CBXTakeaTourHelper;
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -695,8 +697,9 @@ class CBXTakeaTourAdmin {
 			return;
 		}
 
-		$pro_addon_version  = CBXTakeaTourHelper::get_any_plugin_version( 'cbxtakeatourpro/cbxtakeatourpro.php' );
-		$pro_latest_version = '1.1.4';
+		//$pro_addon_version  = CBXTakeaTourHelper::get_any_plugin_version( 'cbxtakeatourpro/cbxtakeatourpro.php' );
+		$pro_addon_version = isset( $plugin_data['Version'] ) ? $plugin_data['Version'] : '';
+		$pro_latest_version = '1.1.5';
 
 
 		if ( $pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ) {

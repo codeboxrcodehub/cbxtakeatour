@@ -9,8 +9,8 @@
  * @example src/settings-api.php How to use the class
  * Further modified by codeboxr.com team
  */
-if ( ! class_exists( 'CBXTakeaTour_Settings' ) ):
-	class CBXTakeaTour_Settings {
+
+class CBXTakeaTour_Settings {
 
 		/**
 		 * settings sections array
@@ -162,6 +162,7 @@ if ( ! class_exists( 'CBXTakeaTour_Settings' ) ):
 
 			// creates our settings in the options table
 			foreach ( $this->settings_sections as $section ) {
+                //phpcs:ignore PluginCheck.CodeAnalysis.SettingSanitization.register_settingDynamic
 				register_setting( $section['id'], $section['id'], [ $this, 'sanitize_options' ] );
 			}
 		}//end method  admin_init
@@ -1124,4 +1125,3 @@ if ( ! class_exists( 'CBXTakeaTour_Settings' ) ):
 			<?php
 		}//end show_forms
 	}//end class CBXTakeaTour_Settings
-endif;

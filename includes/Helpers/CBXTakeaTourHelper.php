@@ -1,5 +1,9 @@
 <?php
 // If this file is called directly, abort.
+namespace cbxtakeatour\includes\Helpers;
+
+use WP_User;
+
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -705,9 +709,9 @@ class CBXTakeaTourHelper {
 	public static function getAllOptionNames() {
 		global $wpdb;
 
-		$prefix       = 'cbxtakeatour_';
-		$wild = '%';
-		$like = $wpdb->esc_like( $prefix ) . $wild;
+		$prefix = 'cbxtakeatour_';
+		$wild   = '%';
+		$like   = $wpdb->esc_like( $prefix ) . $wild;
 
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		$option_names = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->options} WHERE option_name LIKE %s", $like ), ARRAY_A );
@@ -1022,4 +1026,49 @@ class CBXTakeaTourHelper {
 		// Return false if the plugin is not found
 		return '';
 	}//end method get_pro_addon_version
+
+	/**
+	 * Returns codeboxr news feeds using transient cache
+	 *
+	 * @return false|mixed|\SimplePie\Item[]|null
+	 */
+	public static function codeboxr_news_feed() {
+		$cache_key   = 'codeboxr_news_feed_cache';
+		$cached_feed = get_transient( $cache_key );
+
+		$news = false;
+
+		if ( false === $cached_feed ) {
+			include_once ABSPATH . WPINC . '/feed.php'; // Ensure feed functions are available
+			$feed = fetch_feed( 'https://codeboxr.com/feed?post_type=post' );
+
+			if ( is_wp_error( $feed ) ) {
+				return false; // Return false if there's an error
+			}
+
+			$feed->init();
+
+			$feed->set_output_encoding( 'UTF-8' );                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               // this is the encoding parameter, and can be left unchanged in almost every case
+			$feed->handle_content_type();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  // this double-checks the encoding type
+			$feed->set_cache_duration( 21600 );                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            // 21,600 seconds is six hours
+			$limit  = $feed->get_item_quantity( 10 );                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       // fetches the 18 most recent RSS feed stories
+			$items  = $feed->get_items( 0, $limit );
+			$blocks = array_slice( $items, 0, 10 );
+
+			$news = [];
+			foreach ( $blocks as $block ) {
+				$url   = $block->get_permalink();
+				$url   = CBXTakeaTourHelper::url_utmy( esc_url( $url ) );
+				$title = $block->get_title();
+
+				$news[] = [ 'url' => $url, 'title' => $title ];
+			}
+
+			set_transient( $cache_key, $news, HOUR_IN_SECONDS * 6 ); // Cache for 6 hours
+		} else {
+			$news = $cached_feed;
+		}
+
+		return $news;
+	}//end method codeboxr_news_feed
 }//end class CBXTakeaTourHelper

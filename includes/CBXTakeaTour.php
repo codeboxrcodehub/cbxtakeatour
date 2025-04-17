@@ -104,9 +104,9 @@ class CBXTakeaTour {
 	 */
 	private function load_dependencies() {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cbxtakeatour-tpl-loader.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cbxtakeatour-settings.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/CBXTakeaTourHelper.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cbxtakeatour-functions.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/CBXTakeaTour_Settings.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/Helpers/CBXTakeaTourHelper.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/Functions/cbxtakeatour-functions.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/CBXTakeaTourAdmin.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/CBXTakeaTourPublic.php';
 	}//end method load_dependencies

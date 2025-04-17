@@ -2,8 +2,8 @@
 Contributors: codeboxr, manchumahara
 Tags: tour,walkthroughs,take a tour,guided tours
 Requires at least: 5.3
-Tested up to: 6.7.2
-Stable tag: 1.1.4
+Tested up to: 6.8
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -163,6 +163,12 @@ Custom layout helps to style both the tour button and the tour popup box all ele
 
 
 == Changelog ==
+= 1.1.5 =
+* [updated] Minor code level improvement
+* [updated] Style improvement
+* [new] WordPress V6.8 compatible
+* [new] Pro Addon plugin V1.1.5 released and compatible
+
 = 1.1.4 =
 * [fixed] Tour step content data save issue solved.
 * [new] Pro addon V1.1.4 release and compatible

@@ -1,5 +1,7 @@
 <?php
 // If this file is called directly, abort.
+use cbxtakeatour\includes\Helpers\CBXTakeaTourHelper;
+
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }

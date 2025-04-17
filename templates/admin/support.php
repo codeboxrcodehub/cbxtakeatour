@@ -10,6 +10,8 @@
  * @subpackage cbxtakeatour/templates/admin
  */
 // If this file is called directly, abort.
+use cbxtakeatour\includes\Helpers\CBXTakeaTourHelper;
+
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -85,6 +87,17 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.1.5
+                            </p>
+                            <ul>
+                                <li>[updated] Minor code level improvement</li>
+                                <li>[updated] Style improvement</li>
+                                <li>[new] WordPress V6.8 compatible</li>
+                                <li>[new] Pro Addon plugin V1.1.5 released and compatible</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.1.4
                             </p>
                             <ul>
@@ -103,15 +116,6 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                                 <li>[improvement] Dashboard style improved</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.1.2
-                            </p>
-                            <ul>
-                                <li>[improvement] Security improvement</li>
-                                <li>[pro addon] New version of pro addon(V1.1.2) released</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -121,6 +125,16 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.1.5
+                            </p>
+                            <ul>
+                                <li>[fixed] Bug fixed(<code>PHP Deprecated:  Creation of dynamic property CBXTakeaTourPro::$settings is deprecated</code>)</li>
+                                <li>[new] WordPress 6.8 compatible</li>
+                                <li>[new] Core plugin V1.1.5 released and compatible</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.1.4
@@ -138,14 +152,6 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                                 <li>[updated] Core plugin V1.1.3 compatible</li>
                                 <li>[new] Plugin check version V1.3.1 compatible</li>
                                 <li>[improvement] Dashboard style improved</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.1.2
-                            </p>
-                            <ul>
-                                <li>improvement] Security improvement</li>
                             </ul>
                         </div>
                     </div>
@@ -224,7 +230,7 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
 							'https://codeboxr.com/product/cbx-currency-converter-for-wordpress/'                 => 'CBX Currency Converter',
 							'https://codeboxr.com/product/cbx-email-logger-for-wordpress/'                       => 'CBX Email SMTP & Logger',
 							'https://codeboxr.com/product/cbx-petition-for-wordpress/'                           => 'CBX Petition',
-							'https://codeboxr.com/product/cbx-accounting/'                                       => 'CBX Accounting',
+							//'https://codeboxr.com/product/cbx-accounting/'                                       => 'CBX Accounting',
 							'https://codeboxr.com/product/cbx-poll-for-wordpress/'                               => 'CBX Poll',
 							'https://codeboxr.com/product/cbx-multi-criteria-rating-review-for-wordpress/'       => 'CBX Multi Criteria Rating & Review',
 							'https://codeboxr.com/product/cbx-user-online-for-wordpress/'                        => 'CBX User Online & Last Login',
@@ -252,38 +258,28 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                         </div>
                     </div>
                     <div class="content">
-						<?php
+	                    <?php
+	                    $items = CBXTakeaTourHelper::codeboxr_news_feed();
+	                    if ( $items !== false && count( $items ) > 0 ) {
+		                    foreach ( $items as $item ) {
+			                    $url   = $item['url'];
+			                    $title = $item['title'];
 
-						include_once( ABSPATH . WPINC . '/feed.php' );
-						if ( function_exists( 'fetch_feed' ) ) {
-							//$feed = fetch_feed( 'https://codeboxr.com/feed?post_type=product' );
-							$feed = fetch_feed( 'https://codeboxr.com/feed?post_type=post' );
-							if ( ! is_wp_error( $feed ) ) : $feed->init();
-								$feed->set_output_encoding( 'UTF-8' );     // this is the encoding parameter, and can be left unchanged in almost every case
-								$feed->handle_content_type();              // this double-checks the encoding type
-								$feed->set_cache_duration( 21600 );        // 21,600 seconds is six hours
-								$limit = $feed->get_item_quantity( 10 );   // fetches the 18 most recent RSS feed stories
-								$items = $feed->get_items( 0, $limit );    // this sets the limit and array for parsing the feed
-
-								$blocks = array_slice( $items, 0, 10 );
-
-								foreach ( $blocks as $block ) {
-									$url = $block->get_permalink();
-									$url = CBXTakeaTourHelper::url_utmy( $url ); ?>
-                                    <div class="cbx-backend-settings-row">
-                                        <a href="<?php echo esc_url($url); ?>" target="_blank">
-                                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+			                    echo '<div class="cbx-backend-settings-row">';
+			                    echo '<a href="' . esc_url( $url ) . '" target="_blank">';
+			                    echo '<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                 <defs/>
                                                 <path d="M16.4 9.1L12.2 5c-.3-.3-.7-.3-1-.2s-.6.5-.6.9v1.7H4.2c-.5 0-.9.4-.9.9v3.4c0 .2.1.5.3.7.2.2.4.3.7.3h6.4v1.7c0 .4.2.7.6.9.4.1.8.1 1-.2l4.1-4.2c.4-.5.4-1.3 0-1.8z"
                                                       fill="currentColor"/>
-                                            </svg>
-											<?php echo esc_html($block->get_title()); ?></a>
-                                    </div>
-									<?php
-								}//end foreach
-							endif;
-						}
-						?>
+                                            </svg>';
+
+			                    //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			                    echo $title;
+			                    echo '</a>';
+			                    echo '</div>';
+		                    }//end for loop
+	                    }//if data found
+	                    ?>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,8 @@
  * @subpackage CBXTakeaTour/public
  */
 
+use cbxtakeatour\includes\Helpers\CBXTakeaTourHelper;
+
 /**
  * The public-facing functionality of the plugin.
  *
@@ -230,9 +232,9 @@ class CBXTakeaTourPublic {
 	 * Classic widget
 	 */
 	public function register_widget() {
-		if ( ! class_exists( 'CBXTakeaTourHelper' ) ) {
-			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/CBXTakeaTourHelper.php';
-		}
+		/*if ( ! class_exists( 'cbxtakeatour\includes\Helpers\CBXTakeaTourHelper' ) ) {
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/Helpers/CBXTakeaTourHelper.php';
+		}*/
 
 		if ( ! class_exists( 'CBXTakeaTour_Widget' ) ) {
 			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/classic-widgets/class-cbxtakeatour-widget.php';

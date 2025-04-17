@@ -1,5 +1,7 @@
 <?php
 // If this file is called directly, abort.
+use cbxtakeatour\includes\Helpers\CBXTakeaTourHelper;
+
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -110,7 +112,7 @@ if(!function_exists('cbxtakeatour_is_rest_api_request')){
 		}
 
 		$rest_prefix = trailingslashit( rest_get_url_prefix() );
-		return ( false !== strpos( $_SERVER['REQUEST_URI'], $rest_prefix ) );
+		return ( false !== strpos( sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])), $rest_prefix ) );
 	}//end function cbxtakeatour_is_rest_api_request
 }
 
