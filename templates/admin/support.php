@@ -87,6 +87,16 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.1.6
+                            </p>
+                            <ul>
+                                <li>[updated] PHP version compatibility check</li>
+                                <li>[updated] Plugin loading optimized</li>
+                                <li>[new] Pro Addon plugin V1.1.6 released and compatible</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.1.5
                             </p>
                             <ul>
@@ -105,17 +115,6 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                                 <li>[new] Pro addon V1.1.4 release and compatible</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.1.3
-                            </p>
-                            <ul>
-                                <li>[new] Pro addon V1.1.3 compatible</li>
-                                <li>[fixed] Uninstall error fixed</li>
-                                <li>[new] Plugin check version V1.3.1 compatible</li>
-                                <li>[improvement] Dashboard style improved</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -125,6 +124,16 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.1.6
+                            </p>
+                            <ul>
+                                <li>[updated] PHP version compatibility check</li>
+                                <li>[updated] Plugin loading optimized</li>
+                                <li>[new] Core plugin V1.1.6 released and compatible</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.1.5
@@ -142,16 +151,6 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                             <ul>
                                 <li>[updated] Minor changes</li>
                                 <li>[updated] Core plugin V1.1.4 released and compatible</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.1.3
-                            </p>
-                            <ul>
-                                <li>[updated] Core plugin V1.1.3 compatible</li>
-                                <li>[new] Plugin check version V1.3.1 compatible</li>
-                                <li>[improvement] Dashboard style improved</li>
                             </ul>
                         </div>
                     </div>

@@ -67,11 +67,17 @@ class CBXTakeaTour {
 		$this->plugin_name = CBXTAKEATOUR_PLUGIN_NAME;
 		$this->version     = CBXTAKEATOUR_PLUGIN_VERSION;
 
-		$this->load_dependencies();
+		if ( cbxtakeatour_compatible_php_version() ) {
+			$GLOBALS['cbxtakeatour_loaded'] = true;
+			$this->load_dependencies();
 
-		$this->define_common_hooks();
-		$this->define_admin_hooks();
-		$this->define_public_hooks();
+			$this->define_common_hooks();
+			$this->define_admin_hooks();
+			$this->define_public_hooks();
+		}
+		else{
+			add_action( 'admin_notices', [ $this, 'php_version_notice' ] );
+		}
 	}//end of constructor
 
 	/**
@@ -225,7 +231,7 @@ class CBXTakeaTour {
 	 */
 	public function get_plugin_name() {
 		return $this->plugin_name;
-	}
+	}//end method get_plugin_name
 
 	/**
 	 * Retrieve the version number of the plugin.
@@ -235,5 +241,17 @@ class CBXTakeaTour {
 	 */
 	public function get_version() {
 		return $this->version;
-	}
+	}//end method get_version
+
+	/**
+	 * Show php version notice in dashboard
+	 *
+	 * @return void
+	 */
+	public function php_version_notice() {
+		echo '<div class="error"><p>';
+		/* Translators:  PHP Version */
+		echo sprintf(esc_html__( 'CBX Tour - User Walkthroughs & Guided Tours requires at least PHP %s. Please upgrade PHP to run CBX Tour - User Walkthroughs & Guided Tours.', 'cbxtakeatour' ), esc_attr(CBXTAKEATOUR_PHP_MIN_VERSION));
+		echo '</p></div>';
+	}//end method php_version_notice
 }//end class CBXTakeaTour
