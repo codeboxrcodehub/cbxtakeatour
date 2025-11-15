@@ -89,6 +89,17 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.2.1
+                            </p>
+                            <ul>
+                                <li>[improvement] Table name escaped properly</li>
+                                <li>[improvement] Plugin Check 1.7.0 compatible plugin checked</li>
+                                <li>[improvement] Shortcode param xss based security improved</li>
+                                <li>[improvement] Pro addon plugin 1.2.1 released</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.1.6
                             </p>
                             <ul>
@@ -108,15 +119,6 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                                 <li>[new] Pro Addon plugin V1.1.5 released and compatible</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.1.4
-                            </p>
-                            <ul>
-                                <li>[fixed] Tour step content data save issue solved.</li>
-                                <li>[new] Pro addon V1.1.4 release and compatible</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -126,6 +128,16 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.2.1
+                            </p>
+                            <ul>
+                                <li>[improvement] Table name escaped properly</li>
+                                <li>[improvement] Core plugin 1.2.1 released</li>
+                                <li>[improvement] Plugin Check 1.7.0 compatible plugin checked</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.1.6
@@ -144,15 +156,6 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                                 <li>[fixed] Bug fixed(<code>PHP Deprecated:  Creation of dynamic property CBXTakeaTourPro::$settings is deprecated</code>)</li>
                                 <li>[new] WordPress 6.8 compatible</li>
                                 <li>[new] Core plugin V1.1.5 released and compatible</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.1.4
-                            </p>
-                            <ul>
-                                <li>[updated] Minor changes</li>
-                                <li>[updated] Core plugin V1.1.4 released and compatible</li>
                             </ul>
                         </div>
                     </div>
@@ -212,6 +215,31 @@ $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-do
                                           clip-rule="evenodd"/>
                                 </svg>
 								<?php esc_html_e( 'Pro Addon Support', 'cbxtakeatour' ); ?></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cbx-backend-card dashboard-hrm-erp">
+                    <div class="header">
+                        <div class="text">
+                            <h2><?php esc_html_e( 'New Plugins: HRM & ERP ', 'cbxtakeatour' ); ?></h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <ul>
+                                <li>
+                                    <a rel="external" target="_blank" href="https://comforterp.com/product/comfort-accounting-accounting-solution-for-wordpress">Comfort
+                                        Accounting</a></li>
+                                <li>
+                                    <a rel="external" target="_blank" href="https://comforterp.com/product/comfort-inventory-and-invoice-complete-invoice-plugin-for-wordpress">Comfort
+                                        Inventory & Invoice</a></li>
+                                <li><a rel="external" target="_blank" href="https://comforthrm.com/product/comfort-resume-wordpress-resume-builder-plugin">Comfort
+                                        Resume</a></li>
+                                <li><a rel="external" target="_blank" href="https://comforthrm.com/product/comfort-job-wordpress-job-board-plugin">Comfort
+                                        Job Board</a></li>
+                                <li><a rel="external" target="_blank" href="https://comforthrm.com/product/comfort-job-application-plugin-for-wordpress">Comfort
+                                        Job Application</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
