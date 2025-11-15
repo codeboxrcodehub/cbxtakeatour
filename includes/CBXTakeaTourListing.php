@@ -282,7 +282,6 @@ class CBXTakeaTourListing extends WP_List_Table {
 		if (isset($_REQUEST['cbxtakeatour']) && ! empty( $_REQUEST['cbxtakeatour'] ) ) {
 			global $wpdb;
 
-			//$cbxtakeatour_activity_table = $wpdb->prefix . 'cbxtakeatour_activity';
 			$results = isset($_REQUEST['cbxtakeatour'])? wp_unslash($_REQUEST['cbxtakeatour']) : []; //phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 
@@ -420,7 +419,7 @@ class CBXTakeaTourListing extends WP_List_Table {
 
 		global $wpdb;
 
-		$posts_table = $wpdb->prefix . 'posts';
+		$posts_table = esc_sql($wpdb->prefix . 'posts');
 
 
 		$sql_select = "logs.*, logs.ID AS id ";
@@ -470,7 +469,7 @@ class CBXTakeaTourListing extends WP_List_Table {
 
 		$sortingOrder = " ORDER BY $orderby $order ";
 
-		//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 		return $wpdb->get_results( "SELECT $sql_select FROM $posts_table AS logs $join  WHERE  $where_sql $sortingOrder  $limit_sql", 'ARRAY_A' );
 	}//end getLogData
 
@@ -486,7 +485,7 @@ class CBXTakeaTourListing extends WP_List_Table {
 
 		global $wpdb;
 
-		$posts_table = $wpdb->prefix . 'posts';
+		$posts_table = esc_sql($wpdb->prefix . 'posts');
 
 		$sql_select = "SELECT COUNT(*) FROM $posts_table as logs";
 
@@ -523,7 +522,7 @@ class CBXTakeaTourListing extends WP_List_Table {
 			$where_sql = '1';
 		}
 
-		//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 		return $wpdb->get_var( "$sql_select $join  WHERE  $where_sql" );
 	}//end getLogDataCount
 

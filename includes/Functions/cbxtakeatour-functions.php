@@ -138,3 +138,11 @@ if(!function_exists('cbxtakeatour_doing_it_wrong')){
 		// @codingStandardsIgnoreEnd
 	}//end function cbxtakeatour_doing_it_wrong
 }
+
+if(!function_exists('cbxtakeatour_decode_entities_array')){
+	function cbxtakeatour_decode_entities_array($arr = []){
+		return array_map(function ($v) {
+			return is_string($v) ? html_entity_decode($v, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') : $v;
+		}, $arr);
+	}
+}

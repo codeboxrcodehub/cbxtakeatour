@@ -125,7 +125,7 @@ class CBXTakeaTour {
 	 * @access   private
 	 */
 	private function define_common_hooks() {
-		add_action( 'plugins_loaded', [ $this, 'load_plugin_textdomain' ] );
+
 	}//end method define_common_hooks
 
 	/**
@@ -212,15 +212,6 @@ class CBXTakeaTour {
 		//visual composer widget
 		add_action( 'vc_before_init', [ $plugin_public, 'vc_before_init_actions' ] );
 	}//end define_public_hooks
-
-	/**
-	 * Load the plugin text domain for translation.
-	 *
-	 * @since    1.1.1
-	 */
-	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'cbxtakeatour', false, CBXTAKEATOUR_ROOT_PATH . 'languages/' );
-	}//end method load_plugin_textdomain
 
 	/**
 	 * The name of the plugin used to uniquely identify it within the context of

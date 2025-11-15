@@ -163,6 +163,8 @@ class CBXTakeaTourPublic {
 			'auto_start'  => ''  // 1  = auto start, 0 = starts on click, put empty to ignore shortcode param
 		], $atts, 'cbxtakeatour' );
 
+		$atts = cbxtakeatour_decode_entities_array($atts);
+
 
 		$id = isset( $atts['id'] ) ? absint( $atts['id'] ) : 0;
 		if ( $id == 0 ) {

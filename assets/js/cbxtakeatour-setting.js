@@ -118,8 +118,8 @@
             $element.find('.selecttwo-select').select2({
                 placeholder: cbxtakeatour_setting.please_select,
                 allowClear : false,
-                theme      : 'default select2-container--cbx',
-                //dropdownParent: $(element),
+                //theme      : 'default select2-container--cbx',
+                dropdownParent: $(element),
                 searchInputPlaceholder: cbxtakeatour_setting.search_text
             });
         });

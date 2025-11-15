@@ -14,6 +14,8 @@ if ( ! defined( 'WPINC' ) ) {
 }
 ?>
 <?php
+//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+
 $save_svg = cbxtakeatour_load_svg( 'icon_save' );
 ?>
 

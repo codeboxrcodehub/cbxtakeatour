@@ -16,12 +16,13 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+
 $post_title  = isset( $tour->post_title ) ? $tour->post_title : '';
 $post_status = isset( $tour->post_status ) ? $tour->post_status : 'draft';
 
 
 $post_id = intval( $id );
-
 $back_svg = cbxtakeatour_load_svg( 'icon_back' );
 
 

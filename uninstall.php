@@ -32,14 +32,14 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 /**
  * The code that runs during plugin uninstall.
  */
-function uninstall_cbxtakeatour() {
+function cbxtakeatour_uninstall() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/CBXTakeaTour_Settings.php';
 	require_once plugin_dir_path( __FILE__ ) . 'includes/Helpers/CBXTakeaTourHelper.php';
 	require_once plugin_dir_path( __FILE__ ) . 'includes/CBXTakeaTourUninstall.php';
 
 	CBXTakeaTourUninstall::uninstall();
-}//end function uninstall_cbxtakeatour
+}//end function cbxtakeatour_uninstall
 
 if ( ! defined( 'CBXTAKEATOUR_PLUGIN_NAME' ) ) {
-	uninstall_cbxtakeatour();
+	cbxtakeatour_uninstall();
 }

@@ -16,6 +16,8 @@ if ( ! defined( 'WPINC' ) ) {
 }
 ?>
 <?php
+//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+
 do_action( 'cbxtakeatour_widget_form_before_admin', $instance, $this );
 ?>
     <!-- Custom  Title Field -->

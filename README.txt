@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: tour,walkthroughs,take a tour,guided tours
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 1.1.6
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -163,6 +163,12 @@ Custom layout helps to style both the tour button and the tour popup box all ele
 
 
 == Changelog ==
+= 1.2.1 =
+* [improvement] Table name escaped properly
+* [improvement] Plugin Check 1.7.0 compatible plugin checked
+* [improvement] Shortcode param xss based security improved
+* [improvement] Pro addon plugin 1.2.1 released
+
 = 1.1.6 =
 * [updated] PHP version compatibility check
 * [updated] Plugin loading optimized

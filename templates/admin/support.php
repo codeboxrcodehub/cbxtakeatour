@@ -17,6 +17,8 @@ if ( ! defined( 'WPINC' ) ) {
 }
 ?>
 <?php
+//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+
 $plugin_url = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/product/cbx-tour-user-walkthroughs-guided-tours-for-wordpress/' );
 $doc_url    = CBXTakeaTourHelper::url_utmy( 'https://codeboxr.com/doc/cbxtour-doc/' );
 ?>

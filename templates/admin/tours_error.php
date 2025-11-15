@@ -10,12 +10,15 @@
  * @subpackage cbxtakeatour/templates/admin
  */
 if ( ! defined( 'WPINC' ) ) {
-	die;
+    die;
 }
 
 if ( ! isset( $error_text ) ) {
-	$error_text = esc_html__( 'Something went wrong', 'cbxtakeatour' );
+    $error_text = esc_html__( 'Something went wrong', 'cbxtakeatour' );
 }
+
+//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+
 ?>
 
 <div class="wrap cbx-chota cbxtakeatour-page-wrapper cbxtakeatour-tours-listing-wrapper" id="cbxtakeatour-tours-listing">
@@ -23,39 +26,45 @@ if ( ! isset( $error_text ) ) {
         <div class="row">
             <div class="col-12">
                 <h2></h2>
-				<?php do_action( 'cbxtakeatour_wpheading_wrap_before', 'error' ); ?>
+                <?php do_action( 'cbxtakeatour_wpheading_wrap_before', 'error' ); ?>
                 <div class="wp-heading-wrap">
                     <div class="wp-heading-wrap-left pull-left">
-						<?php do_action( 'cbxtakeatour_wpheading_wrap_left_before', 'error' ); ?>
+                        <?php do_action( 'cbxtakeatour_wpheading_wrap_left_before', 'error' ); ?>
                         <h1 class="wp-heading-inline wp-heading-inline-cbxtakeatour">
-							<?php esc_html_e( 'Tours: Error', 'cbxtakeatour' ); ?>
+                            <?php esc_html_e( 'Tours: Error', 'cbxtakeatour' ); ?>
                         </h1>
-						<?php do_action( 'cbxtakeatour_wpheading_wrap_left_after', 'error' ); ?>
+                        <?php do_action( 'cbxtakeatour_wpheading_wrap_left_after', 'error' ); ?>
                     </div>
                     <div class="wp-heading-wrap-right pull-right">
-						<?php do_action( 'cbxtakeatour_wpheading_wrap_right_before', 'error' ); ?>
-                        <a href="<?php echo esc_url(admin_url( 'admin.php?page=cbxtakeatour-settings' )); ?>" class="button outline primary pull-right"><?php esc_html_e( 'Global Settings', 'cbxtakeatour' ); ?></a>
-						<?php do_action( 'cbxtakeatour_wpheading_wrap_right_after', 'error' ); ?>
+                        <?php do_action( 'cbxtakeatour_wpheading_wrap_right_before', 'error' ); ?>
+                        <a href="<?php echo esc_url( admin_url( 'admin.php?page=cbxtakeatour-settings' ) ); ?>" class="button outline primary pull-right"><?php esc_html_e( 'Global Settings',
+                                    'cbxtakeatour' ); ?></a>
+                        <?php do_action( 'cbxtakeatour_wpheading_wrap_right_after', 'error' ); ?>
                     </div>
                 </div>
-				<?php do_action( 'cbxtakeatour_wpheading_wrap_after', 'error' ); ?>
+                <?php do_action( 'cbxtakeatour_wpheading_wrap_after', 'error' ); ?>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
-				<?php do_action( 'cbxtakeatour_tours_error_before_postbox' ); ?>
+                <?php do_action( 'cbxtakeatour_tours_error_before_postbox' ); ?>
                 <div class="postbox">
                     <div class="inside">
-						<?php do_action( 'cbxtakeatour_tours_error_before' ); ?>
+                        <?php do_action( 'cbxtakeatour_tours_error_before' ); ?>
                         <div class="notice notice-error inline">
-                            <p><?php echo esc_html($error_text); ?></p>
+                            <p><?php
+                                echo esc_html( $error_text );//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+                                ?>
+                            </p>
                         </div>
-						<?php do_action( 'cbxtakeatour_tours_error_after' ); ?>
+                        <?php do_action( 'cbxtakeatour_tours_error_after' ); ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<?php
+//phpcs:enable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound

@@ -17,6 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 ?>
 <?php
+//phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 
 $tour_log_list = new CBXTakeaTourListing();
 
